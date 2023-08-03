@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import SearchBar from './SearchBar';
+import WeatherData from './WeatherData';
 import './App.css'
 
 const apiKey = "70335af88254b66a82ea739a9b7de916";
@@ -29,7 +30,7 @@ function App() {
         <header className="appHeader">
           <h1>My basic-ass weather app</h1>
           <SearchBar setCity={setCity} searchCity={searchCity}/>
-          <p className="city">{weather.name}</p>
+          <WeatherData weather={weather} />
         </header>
       </div>
     </>
