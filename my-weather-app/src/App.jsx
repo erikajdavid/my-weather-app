@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import SearchBar from './SearchBar';
 import './App.css'
 
 const apiKey = "70335af88254b66a82ea739a9b7de916";
@@ -28,10 +28,7 @@ function App() {
       <div className="App">
         <header className="appHeader">
           <h1>My basic-ass weather app</h1>
-          <div>
-            <input type="text" placeholder="Enter your city" onChange={(e) => setCity(e.target.value)} />
-            <button onClick={searchCity} type="submit">Find</button>
-          </div>
+          <SearchBar setCity={setCity} searchCity={searchCity}/>
           <p className="city">{weather.name}</p>
         </header>
       </div>
