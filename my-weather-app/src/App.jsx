@@ -18,6 +18,9 @@ function App() {
         setWeather(results);
         console.log(results);
       })
+      .catch(error => {
+        console.error('Error fetching weather data:', error);
+      });
   }
 
   return (
@@ -26,10 +29,10 @@ function App() {
         <header className="appHeader">
           <h1>My basic-ass weather app</h1>
           <div>
-            <input type="text" placeholder="Enter your city"/>
+            <input type="text" placeholder="Enter your city" onChange={(e) => setCity(e.target.value)} />
             <button onClick={searchCity} type="submit">Find</button>
           </div>
-          <p className="city"></p>
+          <p className="city">{weather.name}</p>
         </header>
       </div>
     </>
