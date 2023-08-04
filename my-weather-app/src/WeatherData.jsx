@@ -13,6 +13,10 @@ const WeatherData = ({ weather }) => {
             {weather.main && ( // Only render the details if weather.main is available
                 <>
                 <h2 className="temp">{Math.round(weather.main.temp)}°C</h2>
+                <img
+                  src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
+                  alt="Weather Icon"
+                />
                 <p className="description">{weather.weather[0].description}</p>
                 <p className="feelsLike">Feels like: {Math.round(weather.main.feels_like)}°C</p>
                 <p className="maxTemp">H: {Math.round(weather.main.temp_max)}°C</p>
