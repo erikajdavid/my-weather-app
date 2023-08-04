@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Firebase from './Firebase';
 import Header from './Header';
 import SearchBar from './SearchBar';
 import WeatherData from './WeatherData';
@@ -10,6 +11,8 @@ function App() {
 
   const [city, setCity] = useState('');
   const [weather, setWeather] = useState({});
+
+  const [myIcons, setMyIcons] = useState([]);
 
   useEffect(() => {
     if (city) {
