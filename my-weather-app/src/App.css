@@ -30,6 +30,8 @@ p, h1, h2, h3 {
 
 header {
     padding-right: 5rem;
+    display: flex;
+    flex-direction: column;
 }
 
 header h1 {

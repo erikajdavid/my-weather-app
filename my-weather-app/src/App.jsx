@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Header from './Header';
 import SearchBar from './SearchBar';
 import WeatherData from './WeatherData';
 import './App.css'
@@ -34,11 +35,7 @@ function App() {
   return (
     <>
       <div className="App">
-        <header>
-          <h1>My basic-ass weather app</h1>
-          <h2>A simple daily weather app that is nowhere near as complex as the one you're already using.</h2>
-          <SearchBar setCity={setCity} searchCity={searchCity}/>
-        </header>
+        <Header setCity={setCity} searchCity={searchCity} />
         <div className="AppContainer">
           <WeatherData weather={weather} />
         </div>
