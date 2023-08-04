@@ -9,12 +9,13 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 body {
     display: flex;
     justify-content: center;
-    align-items: center;
     font-weight: 400;
     font-size: 18px;
     background-color: rgb(14, 14, 14);
     color: rgb(228, 228, 228);
     font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 p, h1, h2, h3 {
@@ -25,6 +26,15 @@ p, h1, h2, h3 {
 .App {
     width: 100%;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 5rem 0 1rem 0;
+}
+
+.mainContainer {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -32,6 +42,8 @@ header {
     padding-right: 5rem;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    padding-top: 5rem;
 }
 
 header h1 {
@@ -87,7 +99,6 @@ input {
     border-bottom: 5px solid white;
     border-right: 8px solid white;
     border-left: 8px solid white;
-
 }
 
 .city {
@@ -171,5 +182,18 @@ img {
 
 .extraInfoDescription {
     font-size: 0.90rem;
+}
+
+.footerContainer {
+    font-size: 0.8rem;
+    width: 100%; 
+}
+
+.footerContainer a {
+    color: rgb(43, 93, 215);
+}
+
+.footerContainer a:hover {
+    color: rgb(132, 132, 255);
 }
 
