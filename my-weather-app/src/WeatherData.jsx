@@ -1,6 +1,11 @@
 import React from 'react';
 
 const WeatherData = ({ weather }) => {
+
+    const formatPressure = (pressure) => {
+        return pressure >= 1000 ? pressure.toLocaleString() : pressure;
+      };
+    
   return (
     <>
          <p className="city">{weather.name}</p>
@@ -12,7 +17,7 @@ const WeatherData = ({ weather }) => {
                 <p className="maxTemp">H: {Math.round(weather.main.temp_max)}°C</p>
                 <p className="minTemp">L: {Math.round(weather.main.temp_min)}°C</p>
                 <p className="humidity">Humidity: {weather.main.humidity}%</p>
-                <p className="pressure">Pressure: {weather.main.pressure} hPa</p>
+                <p className="pressure">Pressure: {formatPressure(weather.main.pressure)} hPa</p>
                 <p className="windSpeed">Wind Speed: {weather.wind.speed} km/h</p>
                 </>
             )}
