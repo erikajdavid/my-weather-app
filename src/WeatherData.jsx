@@ -1,16 +1,71 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import clearIcon from './myIcons/01d.png';
+import partlyCloudyIcon from './myIcons/02d.png';
+import cloudyIcon from './myIcons/03d.png';
+import drizzleIcon from './myIcons/09d.png';
+import rainIcon from './myIcons/10d.png';
+import thunderstormIcon from './myIcons/11d.png';
+import snowIcon from './myIcons/13d.png';
+import unclearIcon from './myIcons/50d.png';
 
 const WeatherData = ({ weather }) => {
+  // Define the state to hold the weather icon URL
+  const [weatherIconUrl, setWeatherIconUrl] = useState('');
 
-    const formatPressure = (pressure) => {
-        return pressure >= 1000 ? pressure.toLocaleString() : pressure;
-      };
-    
+  useEffect(() => {
+    if (weather.weather && weather.weather.length > 0) {
+      const weatherCondition = weather.weather[0].main;
+      let weatherIconUrl;
+  
+      // Assign the appropriate custom icon based on the weather condition
+      switch (weatherCondition) {
+        case 'Clear':
+          weatherIconUrl = clearIcon;
+          break;
+        case 'Clouds':
+          weatherIconUrl = partlyCloudyIcon;
+          break;
+        case 'Clouds':
+        weatherIconUrl = cloudyIcon;
+          break;
+        case 'Drizzle':
+          weatherIconUrl = drizzleIcon;
+          break;
+        case 'Rain':
+          weatherIconUrl = rainIcon;
+          break;
+        case 'Thunderstorm':
+          weatherIconUrl = thunderstormIcon;
+          break;
+        case 'Rain':
+          weatherIconUrl = rainIcon;
+          break;
+        case 'Snow':
+          weatherIconUrl = snowIcon;
+          break;
+        case 'Mist, Smoke, HAze, Dust, Fog, Sand, Dust, Ash, Squall, Tornado':
+          weatherIconUrl = unclearIcon;
+          break;
+        // Add other cases for different weather conditions and icons if needed
+        default:
+          // Use a default icon in case the weather condition doesn't match any custom icon
+          weatherIconUrl = clearIcon; // For example, using the clear icon as default
+      }
+  
+      // Set the weatherIconUrl state to the selected custom icon
+      setWeatherIconUrl(weatherIconUrl);
+    }
+  }, [weather]);
+
+  const formatPressure = (pressure) => {
+    return pressure >= 1000 ? pressure.toLocaleString() : pressure;
+  };
+
   return (
     <>
       <div className="AppContainer">
-         <p className="city">{weather.name}</p>
-            {weather.main && ( // Only render the details if weather.main is available
+        <p className="city">{weather.name}</p>
+        {weather.main && (
           <>
             <div className="mainMaxMinTempContainer">
               <h2 className="temp">{Math.round(weather.main.temp)}°C</h2>
@@ -19,14 +74,13 @@ const WeatherData = ({ weather }) => {
                 <p className="minTemp">L: {Math.round(weather.main.temp_min)}°C</p>
               </div>
             </div>
-            <img
-              src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
-              alt="Weather Icon"
-            />
+            {weatherIconUrl && ( // Check if the weatherIconUrl is available before rendering the icon
+              <img src={weatherIconUrl} alt="Weather Icon" />
+            )}
             <div className="bottomHalfContainer">
               <p className="description">{weather.weather[0].main}</p>
               <p className="feelsLikeTemp">Feels like: {Math.round(weather.main.feels_like)}°C</p>
-              <div class="extras">
+              <div className="extras">
                 <div className="extraInfoContainer">
                   <p className="extraInfoTitle">Wind Speed:</p> 
                   <p className="extraInfoDescription">{weather.wind.speed} km/h</p>
@@ -45,7 +99,7 @@ const WeatherData = ({ weather }) => {
         )}
       </div>
     </>
-  )
+  );
 }
 
 export default WeatherData;
