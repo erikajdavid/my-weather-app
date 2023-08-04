@@ -10,11 +10,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 18px;
     background-color: rgb(14, 14, 14);
     color: rgb(228, 228, 228);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 p, h1, h2, h3 {
@@ -32,12 +32,18 @@ header {
     padding-right: 5rem;
 }
 
-header h2 {
-    padding: 0.5em 0;
+header h1 {
+    font-size: 3.25rem;
+    font-weight: 600;
 }
 
 header h2 {
-    width: 650px;
+    padding: 0.5em 0;
+    font-weight: 400;
+}
+
+header h2 {
+    width: 700px;
 }
 
 .AppContainer {
@@ -90,7 +96,7 @@ header h2 {
 
 .city {
     font-size: 1.5rem;
-    font-weight: 900;
+    font-weight: 600;
 }
 
 .bottomHalfContainer {
