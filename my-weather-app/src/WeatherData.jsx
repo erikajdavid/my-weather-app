@@ -12,7 +12,8 @@ const WeatherData = ({ weather }) => {
                 <p className="maxTemp">H: {Math.round(weather.main.temp_max)}°C</p>
                 <p className="minTemp">L: {Math.round(weather.main.temp_min)}°C</p>
                 <p className="humidity">Humidity: {weather.main.humidity}%</p>
-                <p className="windSpeed">Wind Speed: {weather.wind.speed}km/h</p>
+                <p className="pressure">Pressure: {weather.main.pressure} hPa</p>
+                <p className="windSpeed">Wind Speed: {weather.wind.speed} km/h</p>
                 </>
             )}
     </>
