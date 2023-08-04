@@ -2,6 +2,7 @@ import React from 'react';
 import SearchBar from './SearchBar';
 
 const Header = ({ setCity, searchCity }) => {
+
   return (
     <header>
       <h1>My basic-ass weather app</h1>

@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import Header from './Header';
 import SearchBar from './SearchBar';
 import WeatherData from './WeatherData';
+import Footer from './Footer';
+
 import './App.css'
 
 const apiKey = "70335af88254b66a82ea739a9b7de916";
@@ -35,10 +37,13 @@ function App() {
   return (
     <>
       <div className="App">
-        <Header setCity={setCity} searchCity={searchCity} />
-        <div className="AppContainer">
-          <WeatherData weather={weather} />
+        <div className="mainContainer">
+          <Header setCity={setCity} searchCity={searchCity} />
+          <div className="AppContainer">
+            <WeatherData weather={weather} />
+          </div>
         </div>
+        <Footer />
       </div>
     </>
   )
