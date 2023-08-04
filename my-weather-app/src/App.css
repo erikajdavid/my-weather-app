@@ -35,17 +35,42 @@ header {
 }
 
 header h1 {
-    font-size: 3.25rem;
+    font-size: 2.75rem;
     font-weight: 600;
 }
 
 header h2 {
     padding: 0.5em 0;
     font-weight: 400;
+    font-size: 1.5rem;
 }
 
 header h2 {
     width: 700px;
+}
+
+.inputSearchBar {
+    display: flex;
+    align-items: center;
+}
+
+input {
+    padding: 0.6rem;
+}
+
+.inputSearchBar button {
+    all: revert;
+    text-transform: uppercase;
+    background-color: rgb(34, 34, 34);
+    padding: 0.7rem 1rem;
+    font-size: 1.15rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.inputSearchBar button:hover {
+    background-color: rgb(45, 45, 45);
 }
 
 .AppContainer {
@@ -147,3 +172,4 @@ img {
 .extraInfoDescription {
     font-size: 0.90rem;
 }
+
