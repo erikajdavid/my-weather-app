@@ -21,10 +21,14 @@ header {
     padding-right: 5rem;
 }
 
+header h2 {
+    width: 600px;
+}
+
 .AppContainer {
     background-color: rgb(45, 45, 45);
     width: 400px;
-    height: 600px;
+    height: 680px;
     display: flex;
     flex-direction: column;
     justify-content: center;
