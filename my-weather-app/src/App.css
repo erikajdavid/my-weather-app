@@ -5,3 +5,32 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 .clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.App {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+header {
+    padding-right: 5rem;
+}
+
+.AppContainer {
+    background-color: rgb(45, 45, 45);
+    width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.description {
+    text-transform: capitalize;
+}

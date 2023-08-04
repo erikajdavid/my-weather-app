@@ -34,11 +34,13 @@ function App() {
   return (
     <>
       <div className="App">
-        <header className="appHeader">
+        <header>
           <h1>My basic-ass weather app</h1>
           <SearchBar setCity={setCity} searchCity={searchCity}/>
-          <WeatherData weather={weather} />
         </header>
+        <div className="AppContainer">
+          <WeatherData weather={weather} />
+        </div>
       </div>
     </>
   )
