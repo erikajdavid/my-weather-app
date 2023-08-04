@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import SearchBar from './SearchBar';
 import WeatherData from './WeatherData';
 import './App.css'
@@ -9,6 +9,13 @@ function App() {
 
   const [city, setCity] = useState('');
   const [weather, setWeather] = useState({});
+
+  useEffect(() => {
+    if (city) {
+      searchCity();
+    }
+  }, [city]);
+
 
   const searchCity = () => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
