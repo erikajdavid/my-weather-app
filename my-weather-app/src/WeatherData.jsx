@@ -17,7 +17,7 @@ const WeatherData = ({ weather }) => {
                   src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
                   alt="Weather Icon"
                 />
-                <p className="description">{weather.weather[0].description}</p>
+                <p className="description">{weather.weather[0].main}</p>
                 <p className="feelsLike">Feels like: {Math.round(weather.main.feels_like)}°C</p>
                 <p className="maxTemp">H: {Math.round(weather.main.temp_max)}°C</p>
                 <p className="minTemp">L: {Math.round(weather.main.temp_min)}°C</p>
