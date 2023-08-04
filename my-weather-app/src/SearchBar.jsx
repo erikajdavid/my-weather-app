@@ -13,7 +13,7 @@ const SearchBar = ({ setCity, searchCity }) => {
   };
 
   return (
-    <div>
+    <div className="inputSearchBar">
       <input
         type="text"
         placeholder="Enter your city"
