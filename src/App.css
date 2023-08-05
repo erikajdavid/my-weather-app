@@ -175,7 +175,7 @@ input {
 
 .extraInfoContainer {
     width: 100px;
-    height: 115px;
+    height: 110px;
     background-color: rgb(43, 93, 215);
     display: flex;
     flex-direction: column;
@@ -196,7 +196,8 @@ input {
 }
 
 .miniIcon {
-    width: 100%;
+    width: 65%;
+    padding: 0.25rem 0;
 }
 
 .footerContainer {
