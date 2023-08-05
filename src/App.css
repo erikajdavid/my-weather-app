@@ -73,7 +73,7 @@ input {
 .inputSearchBar button {
     all: revert;
     text-transform: uppercase;
-    background-color: rgb(34, 34, 34);
+    background-color: rgb(43, 93, 215);
     height: 2.5rem;
     padding: 0 1rem;
     font-size: 1.15rem;
@@ -85,7 +85,7 @@ input {
 }
 
 .inputSearchBar button:hover {
-    background-color: rgb(43, 93, 215);
+    background-color: rgb(76, 125, 249);
 }
 
 .AppContainer {
@@ -175,8 +175,8 @@ input {
 
 .extraInfoContainer {
     width: 100px;
-    height: 110px;
-    background-color: rgb(43, 93, 215);
+    height: 120px;
+    background: linear-gradient(rgb(11, 19, 53), rgb(43, 93, 215));
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
