@@ -15,21 +15,21 @@ import unclearNightIcon from './myIcons/50n.png';
 
 const WeatherData = ({ weather }) => {
   let [weatherIconUrl, setWeatherIconUrl] = useState('');
+  const [currentTimeInLocation, setCurrentTimeInLocation] = useState(null); // Define the currentTimeInLocation state
+  const [localTime, setLocalTime] = useState(''); // Define the localTime state
 
   useEffect(() => {
     if (weather.weather && weather.weather.length > 0) {
       const weatherCondition = weather.weather[0].main;
-
       const currentTimeUTC = new Date();
+      const offsetInSeconds = weather.timezone;
 
-      // Convert UTC time to local time of the specified location
-      const currentTimeInLocation = new Date(currentTimeUTC.getTime() + weather.timezone * 1000);
+      const currentTimeInLocation = new Date(currentTimeUTC.getTime() + offsetInSeconds * 1000);
+
       console.log(currentTimeInLocation.toISOString()); // Log the UTC time in ISO format
-      
+      let weatherIconUrl = '';
       // Get the current hour in the local time
-      const currentHour = currentTimeInLocation.getUTCHours(); // Use getUTCHours to get the hour in the converted timezone
-      console.log(currentHour);
-
+      const currentHour = currentTimeInLocation.getUTCHours();
       const isDaytime = currentHour >= 6 && currentHour < 20;
       
       switch (weatherCondition) {
@@ -63,8 +63,26 @@ const WeatherData = ({ weather }) => {
           }
       }
         setWeatherIconUrl(weatherIconUrl);
+        setCurrentTimeInLocation(currentTimeInLocation); // Update the state with the current time in location
     }
   }, [weather]);
+
+  useEffect(() => {
+    if (currentTimeInLocation) {
+      const localTimeInLocation = new Intl.DateTimeFormat(undefined, {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+        timeZone: 'UTC', // Specify the timezone as UTC
+      }).format(currentTimeInLocation);
+
+      setLocalTime(localTimeInLocation);
+    }
+  }, [currentTimeInLocation]);
 
   const formatPressure = (pressure) => {
     return pressure >= 1000 ? pressure.toLocaleString() : pressure;
@@ -74,6 +92,7 @@ const WeatherData = ({ weather }) => {
     <>
       <div className="AppContainer">
         <p className="city">{weather.name}</p>
+        <p className="dateAndTime">{ localTime }</p>
         {weather.main && (
           <>
             <div className="mainMaxMinTempContainer">
