@@ -19,6 +19,7 @@ const SearchBar = ({ setCity, searchCity }) => {
         placeholder="Enter your city"
         value={inputCity}
         onChange={handleInputChange}
+        required
       />
       <button onClick={handleSearchClick} type="submit">
         Go
