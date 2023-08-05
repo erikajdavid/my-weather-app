@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import clearIcon from './myIcons/01d.png';
+import clearNightIcon from './myIcons/01n.png';
 import partlyCloudyIcon from './myIcons/02d.png';
 import cloudyIcon from './myIcons/03d.png';
+import cloudyNightIcon from './myIcons/03n.png';
 import drizzleIcon from './myIcons/09d.png';
 import rainIcon from './myIcons/10d.png';
+import rainNightIcon from './myIcons/10n.png';
 import thunderstormIcon from './myIcons/11d.png';
 import snowIcon from './myIcons/13d.png';
 import unclearIcon from './myIcons/50d.png';
@@ -16,18 +19,23 @@ const WeatherData = ({ weather }) => {
       const weatherCondition = weather.weather[0].main;
       let weatherIconUrl;
 
+      const currentTime = new Date();
+      const currentHour = currentTime.getHours();
+
+      const isDaytime = currentHour >= 6 && currentHour < 20;
+
       switch (weatherCondition) {
         case 'Clear':
-          weatherIconUrl = clearIcon;
+          weatherIconUrl = isDaytime ? clearIcon : clearNightIcon;
           break;
         case 'Clouds':
-          weatherIconUrl = cloudyIcon;
+          weatherIconUrl = isDaytime ? cloudyIcon : cloudyNightIcon;
           break;
         case 'Drizzle':
           weatherIconUrl = drizzleIcon;
           break;
         case 'Rain':
-          weatherIconUrl = rainIcon;
+          weatherIconUrl = isDaytime ? rainIcon : rainNightIcon;
           break;
         case 'Thunderstorm':
           weatherIconUrl = thunderstormIcon;
