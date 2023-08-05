@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import clearIcon from './myIcons/01d.png';
 import clearNightIcon from './myIcons/01n.png';
-import partlyCloudyIcon from './myIcons/02d.png';
 import cloudyIcon from './myIcons/03d.png';
 import cloudyNightIcon from './myIcons/03n.png';
 import drizzleIcon from './myIcons/09d.png';
 import rainIcon from './myIcons/10d.png';
 import rainNightIcon from './myIcons/10n.png';
 import thunderstormIcon from './myIcons/11d.png';
+import thunderstormNightIcon from './myIcons/11n.png';
 import snowIcon from './myIcons/13d.png';
+import snowNightIcon from './myIcons/13n.png';
 import unclearIcon from './myIcons/50d.png';
+import unclearNightIcon from './myIcons/50n.png';
 
 const WeatherData = ({ weather }) => {
   let [weatherIconUrl, setWeatherIconUrl] = useState('');
@@ -44,13 +46,13 @@ const WeatherData = ({ weather }) => {
           weatherIconUrl = isDaytime ? rainIcon : rainNightIcon;
           break;
         case 'Thunderstorm':
-          weatherIconUrl = thunderstormIcon;
+          weatherIconUrl = isDaytime ? thunderstormIcon : thunderstormNightIcon;
           break;
         case 'Snow':
-          weatherIconUrl = snowIcon;
+          weatherIconUrl = isDaytime ? snowIcon: snowNightIcon;
           break;
-        case 'Mist, Smoke, HAze, Dust, Fog, Sand, Dust, Ash, Squall, Tornado':
-          weatherIconUrl = unclearIcon;
+        case 'Mist, Smoke, Haze, Dust, Fog, Sand, Dust, Ash, Squall, Tornado':
+          weatherIconUrl = isDaytime ? unclearIcon: unclearNightIcon;
           break;
         default:
           const unclearConditions = ['Mist', 'Smoke', 'Haze', 'Dust', 'Fog', 'Sand', 'Dust', 'Ash', 'Squall', 'Tornado'];
