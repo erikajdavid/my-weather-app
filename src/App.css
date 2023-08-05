@@ -176,7 +176,7 @@ input {
 .extraInfoContainer {
     width: 100px;
     height: 110px;
-    background-color: rgb(43, 93, 215);
+    background: linear-gradient(rgb(43, 93, 215), rgb(11, 19, 53));
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
