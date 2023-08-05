@@ -12,18 +12,24 @@ import snowIcon from './myIcons/13d.png';
 import unclearIcon from './myIcons/50d.png';
 
 const WeatherData = ({ weather }) => {
-  const [weatherIconUrl, setWeatherIconUrl] = useState('');
+  let [weatherIconUrl, setWeatherIconUrl] = useState('');
 
   useEffect(() => {
     if (weather.weather && weather.weather.length > 0) {
       const weatherCondition = weather.weather[0].main;
-      let weatherIconUrl;
 
-      const currentTime = new Date();
-      const currentHour = currentTime.getHours();
+      const currentTimeUTC = new Date();
+
+      // Convert UTC time to local time of the specified location
+      const currentTimeInLocation = new Date(currentTimeUTC.getTime() + weather.timezone * 1000);
+      console.log(currentTimeInLocation.toISOString()); // Log the UTC time in ISO format
+      
+      // Get the current hour in the local time
+      const currentHour = currentTimeInLocation.getUTCHours(); // Use getUTCHours to get the hour in the converted timezone
+      console.log(currentHour);
 
       const isDaytime = currentHour >= 6 && currentHour < 20;
-
+      
       switch (weatherCondition) {
         case 'Clear':
           weatherIconUrl = isDaytime ? clearIcon : clearNightIcon;
@@ -39,9 +45,6 @@ const WeatherData = ({ weather }) => {
           break;
         case 'Thunderstorm':
           weatherIconUrl = thunderstormIcon;
-          break;
-        case 'Rain':
-          weatherIconUrl = rainIcon;
           break;
         case 'Snow':
           weatherIconUrl = snowIcon;
