@@ -74,10 +74,6 @@ const WeatherData = ({ weather }) => {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric',
-        second: 'numeric',
-        timeZone: 'UTC', // Specify the timezone as UTC
       }).format(currentTimeInLocation);
 
       setLocalTime(localTimeInLocation);
@@ -92,9 +88,9 @@ const WeatherData = ({ weather }) => {
     <>
       <div className="AppContainer">
         <p className="city">{weather.name}</p>
-        <p className="dateAndTime">{ localTime }</p>
         {weather.main && (
           <>
+            <p className="dateAndTime">{ localTime }</p>
             <div className="mainMaxMinTempContainer">
               <h2 className="temp">{Math.round(weather.main.temp)}°C</h2>
               <div className="maxMinTempContainer">

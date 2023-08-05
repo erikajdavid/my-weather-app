@@ -116,29 +116,29 @@ input {
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding-bottom: 6.5rem;
-    height: auto;
+    padding-bottom: 6rem;
 }
 
 .temp {
-    font-size: 3.5rem;
+    font-size: 3.75rem;
     padding-right: 1rem;
+    padding-top: 1rem;
 }
 
 .maxMinTempContainer {
     padding-right: 1rem;
+    padding-top: 0.75rem;
 }
 
 .description {
     text-transform: capitalize;
     font-size: 1.3rem;
-    padding-top: 0.5rem;
 }
 
 .feelsLikeTemp {
     font-size: 1.1rem;
     padding-top: 0.3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .city {
