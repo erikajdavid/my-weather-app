@@ -9,24 +9,19 @@ import snowIcon from './myIcons/13d.png';
 import unclearIcon from './myIcons/50d.png';
 
 const WeatherData = ({ weather }) => {
-  // Define the state to hold the weather icon URL
   const [weatherIconUrl, setWeatherIconUrl] = useState('');
 
   useEffect(() => {
     if (weather.weather && weather.weather.length > 0) {
       const weatherCondition = weather.weather[0].main;
       let weatherIconUrl;
-  
-      // Assign the appropriate custom icon based on the weather condition
+
       switch (weatherCondition) {
         case 'Clear':
           weatherIconUrl = clearIcon;
           break;
         case 'Clouds':
-          weatherIconUrl = partlyCloudyIcon;
-          break;
-        case 'Clouds':
-        weatherIconUrl = cloudyIcon;
+          weatherIconUrl = cloudyIcon;
           break;
         case 'Drizzle':
           weatherIconUrl = drizzleIcon;
@@ -46,14 +41,15 @@ const WeatherData = ({ weather }) => {
         case 'Mist, Smoke, HAze, Dust, Fog, Sand, Dust, Ash, Squall, Tornado':
           weatherIconUrl = unclearIcon;
           break;
-        // Add other cases for different weather conditions and icons if needed
         default:
-          // Use a default icon in case the weather condition doesn't match any custom icon
-          weatherIconUrl = clearIcon; // For example, using the clear icon as default
+          const unclearConditions = ['Mist', 'Smoke', 'Haze', 'Dust', 'Fog', 'Sand', 'Dust', 'Ash', 'Squall', 'Tornado'];
+          if (unclearConditions.includes(weatherCondition)) {
+            weatherIconUrl = unclearIcon;
+          } else {
+            weatherIconUrl = clearIcon;
+          }
       }
-  
-      // Set the weatherIconUrl state to the selected custom icon
-      setWeatherIconUrl(weatherIconUrl);
+        setWeatherIconUrl(weatherIconUrl);
     }
   }, [weather]);
 
