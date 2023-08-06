@@ -93,7 +93,7 @@ const WeatherData = ({ weather }) => {
       <div className="AppContainer">
         {!weather.main ? (
           <div className="placeholderImgContainer">
-            <img className="placeholderImg" src={placeholderImg} alt="Sun and clouds" />
+            <img className="placeholderImage" src={placeholderImg} alt="Sun and clouds" />
           </div>
         ) : (
           <>
