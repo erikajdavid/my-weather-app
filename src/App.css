@@ -96,6 +96,14 @@ input {
     font-size: 0.85rem;
 }
 
+.invalidCityError p {
+    color: red;
+    border: 1px solid red;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .AppContainer {
     background-color: rgb(43, 93, 215);
     width: 400px;

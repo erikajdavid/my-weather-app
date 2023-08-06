@@ -10,7 +10,7 @@ const SearchBar = ({ setCity, searchCity }) => {
 
   const handleSearchClick = () => {
     if (inputCity.trim() === '') {
-      setErrorMessage('Oops! Please enter a city.');
+      setErrorMessage('Oops! Please enter a valid city.');
     } else {
       setCity(inputCity);
       setInputCity('');
@@ -28,7 +28,7 @@ const SearchBar = ({ setCity, searchCity }) => {
         required
       />
       <button onClick={handleSearchClick} type="submit">
-      <i class="fa-solid fa-magnifying-glass"></i>
+      <i className="fa-solid fa-magnifying-glass"></i>
       </button>
       {errorMessage && <p className="error">{errorMessage}</p>}
     </div>
