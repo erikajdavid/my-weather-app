@@ -2,14 +2,20 @@ import React, { useState } from 'react';
 
 const SearchBar = ({ setCity, searchCity }) => {
   const [inputCity, setInputCity] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (e) => {
     setInputCity(e.target.value);
   };
 
   const handleSearchClick = () => {
-    setCity(inputCity);
-    setInputCity('');
+    if (inputCity.trim() === '') {
+      setErrorMessage('Oops! Please enter a city.');
+    } else {
+      setCity(inputCity);
+      setInputCity('');
+      setErrorMessage('');
+    }
   };
 
   return (
@@ -22,8 +28,9 @@ const SearchBar = ({ setCity, searchCity }) => {
         required
       />
       <button onClick={handleSearchClick} type="submit">
-        Go
+      <i class="fa-solid fa-magnifying-glass"></i>
       </button>
+      {errorMessage && <p className="error">{errorMessage}</p>}
     </div>
   );
 };

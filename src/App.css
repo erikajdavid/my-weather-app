@@ -68,6 +68,7 @@ header h2 {
 
 input {
     height: 2.5rem;
+    position: relative;
 }
 
 .inputSearchBar button {
@@ -86,6 +87,13 @@ input {
 
 .inputSearchBar button:hover {
     background-color: rgb(76, 125, 249);
+}
+
+.error {
+    color: rgb(182, 1, 1);
+    position: absolute;
+    top: 70%;
+    font-size: 0.85rem;
 }
 
 .AppContainer {
@@ -133,13 +141,12 @@ input {
 .description {
     text-transform: capitalize;
     font-size: 1.3rem;
-    padding-top: 10rem;
 }
 
 .feelsLikeTemp {
     font-size: 1.1rem;
     padding-top: 0.3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
 }
 
 .city {
