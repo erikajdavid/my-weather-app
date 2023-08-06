@@ -15,7 +15,7 @@ import unclearNightIcon from './myIcons/50n.png';
 import windIcon from './myIcons/wind.png';
 import humidityIcon from './myIcons/humidity.png';
 import pressureIcon from './myIcons/pressure.png';
-import placeholderImg from './myicons/placeholderImg.png';
+import placeholderImg from './myIcons/placeholderImg.png';
 
 const WeatherData = ({ weather }) => {
   let [weatherIconUrl, setWeatherIconUrl] = useState('');
