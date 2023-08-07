@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const SearchBar = ({ setCity, searchCity }) => {
+const SearchBar = ({ setCity }) => {
   const [inputCity, setInputCity] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -13,7 +13,6 @@ const SearchBar = ({ setCity, searchCity }) => {
       setErrorMessage('Oops! Please enter a valid city.');
     } else {
       setCity(inputCity);
-      searchCity(inputCity);
       setInputCity('');
       setErrorMessage('');
     }
