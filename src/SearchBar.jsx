@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 
-const SearchBar = ({ setCity }) => {
+const SearchBar = ({ setCity, weather }) => {
   const [inputCity, setInputCity] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (e) => {
     setInputCity(e.target.value);
+    setErrorMessage('');
   };
 
   const handleSearchClick = () => {
@@ -30,9 +31,14 @@ const SearchBar = ({ setCity }) => {
       <button onClick={handleSearchClick} type="submit">
         <i className="fa-solid fa-magnifying-glass"></i>
       </button>
-      {errorMessage && <p className="error">{errorMessage}</p>}
+      {(errorMessage || (weather.cod === '404')) && (
+      <p className="error">
+        {errorMessage || 'Oops! Something went wrong. Check your spelling.'}
+      </p>
+    )}
     </div>
   );
 };
 
 export default SearchBar;
+

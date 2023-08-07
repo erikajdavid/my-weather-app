@@ -23,21 +23,25 @@ function App() {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
     fetch(url)
-      .then(res => res.json())
-      .then(results => {
+    .then(res => res.json())
+    .then(results => {
+      if (results.cod === '404') {
+        setWeather({ cod: '404', message: results.message });
+      } else {
         setWeather(results);
-        console.log(results);
-      })
-      .catch(error => {
-        console.error('Error fetching weather data:', error);
-      });
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching weather data:', error);
+      setWeather({ cod: '500', message: 'Server error. Please try again later.' });
+    });
   }
 
   return (
     <>
       <div className="App">
         <div className="mainContainer">
-          <Header setCity={setCity} searchCity={searchCity} />
+          <Header setCity={setCity} searchCity={searchCity} weather={weather}/>
           <div className="AppContainer">
             <WeatherData weather={weather} />
           </div>
