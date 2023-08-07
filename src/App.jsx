@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Header from './Header';
-import SearchBar from './SearchBar';
 import WeatherData from './WeatherData';
 import Footer from './Footer';
 
