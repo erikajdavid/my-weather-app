@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const SearchBar = ({ setCity, searchCity, weather }) => {
+const SearchBar = ({ setCity, searchCity }) => {
   const [inputCity, setInputCity] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -8,12 +8,12 @@ const SearchBar = ({ setCity, searchCity, weather }) => {
     setInputCity(e.target.value);
   };
 
-  const handleSearchClick = async () => {
+  const handleSearchClick = () => {
     if (inputCity.trim() === '') {
       setErrorMessage('Oops! Please enter a valid city.');
     } else {
       setCity(inputCity);
-      await searchCity(inputCity);
+      searchCity(inputCity);
       setInputCity('');
       setErrorMessage('');
     }
