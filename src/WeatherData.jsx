@@ -30,7 +30,7 @@ const WeatherData = ({ weather }) => {
 
       const currentTimeInLocation = new Date(currentTimeUTC.getTime() + offsetInSeconds * 1000);
 
-      console.log(currentTimeInLocation.toISOString()); // Log the UTC time in ISO format
+      currentTimeInLocation.toISOString(); // Log the UTC time in ISO format
       let weatherIconUrl = '';
       // Get the current hour in the local time
       const currentHour = currentTimeInLocation.getUTCHours();
