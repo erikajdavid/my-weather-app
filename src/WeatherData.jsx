@@ -12,10 +12,8 @@ import snowIcon from './myIcons/13d.png';
 import snowNightIcon from './myIcons/13n.png';
 import unclearIcon from './myIcons/50d.png';
 import unclearNightIcon from './myIcons/50n.png';
-import windIcon from './myIcons/wind.png';
-import humidityIcon from './myIcons/humidity.png';
-import pressureIcon from './myIcons/pressure.png';
 import placeholderImg from './myIcons/placeholderImg.png';
+import ExtraFeatures from './ExtraFeatures';
 
 const WeatherData = ({ weather }) => {
   let [weatherIconUrl, setWeatherIconUrl] = useState('');
@@ -114,23 +112,11 @@ const WeatherData = ({ weather }) => {
                 <div className="bottomHalfContainer">
                   <p className="description">{weather.weather[0].main}</p>
                   <p className="feelsLikeTemp">Feels like: {Math.round(weather.main.feels_like)}°C</p>
-                  <div className="extras">
-                    <div className="extraInfoContainer">
-                      <p className="extraInfoTitle">Wind Speed:</p>
-                      <img className="miniIcon" src={windIcon} alt="wind icon" />
-                      <p className="extraInfoDescription">{weather.wind.speed} km/h</p>
-                    </div>
-                    <div className="extraInfoContainer">
-                      <p className="extraInfoTitle">Humidity:</p>
-                      <img className="miniIcon" src={humidityIcon} alt="humidity icon" />
-                      <p className="extraInfoDescription">{weather.main.humidity}%</p>
-                    </div>
-                    <div className="extraInfoContainer">
-                      <p className="extraInfoTitle">Pressure:</p>
-                      <img className="miniIcon" src={pressureIcon} alt="hpa icon" />
-                      <p className="extraInfoDescription">{formatPressure(weather.main.pressure)} hPa</p>
-                    </div>
-                  </div>
+                  <ExtraFeatures
+                    windSpeed={weather.wind.speed}
+                    humidity={weather.main.humidity}
+                    pressure={formatPressure(weather.main.pressure)}  
+                  />
                 </div>
               </>
             )}
