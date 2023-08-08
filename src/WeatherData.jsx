@@ -13,6 +13,7 @@ import snowNightIcon from './myIcons/13n.png';
 import unclearIcon from './myIcons/50d.png';
 import unclearNightIcon from './myIcons/50n.png';
 import placeholderImg from './myIcons/placeholderImg.png';
+import MainTemperatures from './MainTemperatures';
 import ExtraFeatures from './ExtraFeatures';
 
 const WeatherData = ({ weather }) => {
@@ -99,13 +100,11 @@ const WeatherData = ({ weather }) => {
             {weather.main && (
               <>
                 <p className="dateAndTime">{localTime}</p>
-                <div className="mainMaxMinTempContainer">
-                  <h2 className="temp">{Math.round(weather.main.temp)}°C</h2>
-                  <div className="maxMinTempContainer">
-                    <p className="maxTemp">H: {Math.round(weather.main.temp_max)}°C</p>
-                    <p className="minTemp">L: {Math.round(weather.main.temp_min)}°C</p>
-                  </div>
-                </div>
+                <MainTemperatures
+                  temperature={weather.main.temp}
+                  maxTemperature={weather.main.temp_max}
+                  minTemperature={weather.main.temp_min}
+                />
                 {weatherIconUrl && (
                   <img className="tempIcon" src={weatherIconUrl} alt="Weather Icon" />
                 )}
