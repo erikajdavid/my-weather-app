@@ -13,16 +13,13 @@ const WeatherData = ({ weather }) => {
   const currentHour = currentTimeInLocation?.getUTCHours();
   const isDaytime = currentHour >= 6 && currentHour < 20;
 
-  useEffect(() => {
+  useEffect(( ) => {
     if (weather.weather && weather.weather.length > 0) {
-      const weatherCondition = weather.weather[0].main;
       const currentTimeUTC = new Date();
       const offsetInSeconds = weather.timezone;
 
       const currentTimeInLocation = new Date(currentTimeUTC.getTime() + offsetInSeconds * 1000);
-
-      let weatherIconUrl = '';
-
+      
       setWeatherIconUrl(weatherIconUrl);
       setCurrentTimeInLocation(currentTimeInLocation);
     }
