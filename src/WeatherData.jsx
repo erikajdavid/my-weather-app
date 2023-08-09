@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import placeholderImg from './myIcons/placeholderImg.png';
+import LocationInfo from './LocationInfo';
 import WeatherIcons from './WeatherIcons';
 import MainTemperatures from './MainTemperatures';
 import BottomHalfContainer from './BottomHalfContainer';
@@ -47,23 +48,22 @@ const WeatherData = ({ weather }) => {
         </div>
       ) : (
         <>
-          <p className="city">{weather.name}</p>
+          <LocationInfo weather={weather} />
           {weather.main && (
-            <>
-              <p className="dateAndTime">{localTime}</p>
+              <>
+                <p className="dateAndTime">{localTime}</p>
 
-              <MainTemperatures
-                temperature={weather.main.temp}
-                maxTemperature={weather.main.temp_max}
-                minTemperature={weather.main.temp_min}
-              />
+                <MainTemperatures
+                  temperature={weather.main.temp}
+                  maxTemperature={weather.main.temp_max}
+                  minTemperature={weather.main.temp_min}
+                />
 
-              <WeatherIcons weatherCondition={weather.weather[0].main} isDaytime={isDaytime} />
+                <WeatherIcons weatherCondition={weather.weather[0].main} isDaytime={isDaytime} />
 
-              <BottomHalfContainer 
-                weather={weather}
-              />
-
+                <BottomHalfContainer 
+                  weather={weather}
+                />
             </>
           )}
         </>
