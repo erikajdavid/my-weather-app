@@ -5,8 +5,6 @@ import Footer from './Footer';
 
 import './App.css'
 
-const apiKey = "70335af88254b66a82ea739a9b7de916";
-
 function App() {
 
   const [city, setCity] = useState('');
@@ -20,9 +18,18 @@ function App() {
 
 
   const searchCity = () => {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+    const apiKey = "70335af88254b66a82ea739a9b7de916";
+    const metric = "metric";
+    const newUrl = new URL("https://api.openweathermap.org/data/2.5/weather")
 
-    fetch(url)
+
+    newUrl.search = new URLSearchParams ({
+        appid: apiKey,
+        units: metric,
+        q: city
+      })
+    
+    fetch(newUrl)
     .then(res => res.json())
     .then(results => {
       if (results.cod === '404') {
