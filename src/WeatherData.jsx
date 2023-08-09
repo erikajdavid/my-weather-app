@@ -35,23 +35,14 @@ const WeatherData = ({ weather }) => {
       ) : (
         <>
           <LocationInfo weather={weather} />
-          {weather.main && (
-              <>
-                <DateAndTime currentTimeInLocation={currentTimeInLocation} />
-
-                <MainTemperatures
-                  temperature={weather.main.temp}
-                  maxTemperature={weather.main.temp_max}
-                  minTemperature={weather.main.temp_min}
-                />
-
-                <WeatherIcons weatherCondition={weather.weather[0].main} isDaytime={isDaytime} />
-
-                <BottomHalfContainer 
-                  weather={weather}
-                />
-            </>
-          )}
+          <DateAndTime currentTimeInLocation={currentTimeInLocation} />
+          <MainTemperatures
+            temperature={weather.main.temp}
+            maxTemperature={weather.main.temp_max}
+            minTemperature={weather.main.temp_min}
+          />
+          <WeatherIcons weatherCondition={weather.weather[0].main} isDaytime={isDaytime} />
+          <BottomHalfContainer weather={weather}/>
         </>
       )}
     </div>

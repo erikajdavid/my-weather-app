@@ -45,17 +45,15 @@ function App() {
   }
 
   return (
-    <>
-      <div className="App">
-        <div className="mainContainer">
-          <Header setCity={setCity} searchCity={searchCity} weather={weather}/>
-          <div className="AppContainer">
-            <WeatherData weather={weather} />
-          </div>
+    <div className="App">
+      <div className="mainContainer">
+        <Header setCity={setCity} searchCity={searchCity} weather={weather}/>
+        <div className="AppContainer">
+          <WeatherData weather={weather} />
         </div>
-        <Footer />
       </div>
-    </>
+      <Footer />
+    </div>
   )
 }
 
