@@ -3,7 +3,6 @@ import placeholderImg from './myIcons/placeholderImg.png';
 import WeatherIcons from './WeatherIcons';
 import MainTemperatures from './MainTemperatures';
 import BottomHalfContainer from './BottomHalfContainer';
-import ExtraFeatures from './ExtraFeatures';
 
 const WeatherData = ({ weather }) => {
   let [weatherIconUrl, setWeatherIconUrl] = useState('');
@@ -64,7 +63,7 @@ const WeatherData = ({ weather }) => {
               <BottomHalfContainer 
                 weather={weather}
               />
-              
+
             </>
           )}
         </>
