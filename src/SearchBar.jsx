@@ -32,10 +32,13 @@ const SearchBar = ({ setCity, weather }) => {
       handleSearchClick();
     }
   };
-  
+
+  const errorInputClass = errorMessage ? 'errorInput' : '';
+
   return (
     <div className="inputSearchBar">
-      <input
+      <input 
+        className={errorInputClass}
         type="text"
         placeholder="Enter your city"
         value={inputCity}
