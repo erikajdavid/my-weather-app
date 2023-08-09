@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import placeholderImg from './myIcons/placeholderImg.png';
 import WeatherIcons from './WeatherIcons';
 import MainTemperatures from './MainTemperatures';
+import BottomHalfContainer from './BottomHalfContainer';
 import ExtraFeatures from './ExtraFeatures';
 
 const WeatherData = ({ weather }) => {
@@ -38,9 +39,6 @@ const WeatherData = ({ weather }) => {
     }
   }, [currentTimeInLocation]);
 
-  const formatPressure = (pressure) => {
-    return pressure >= 1000 ? pressure.toLocaleString() : pressure;
-  };
 
   return (
     <div className="AppContainer">
@@ -63,15 +61,10 @@ const WeatherData = ({ weather }) => {
 
               <WeatherIcons weatherCondition={weather.weather[0].main} isDaytime={isDaytime} />
 
-              <div className="bottomHalfContainer">
-                <p className="description">{weather.weather[0].main}</p>
-                <p className="feelsLikeTemp">Feels like: {Math.round(weather.main.feels_like)}°C</p>
-                <ExtraFeatures
-                  windSpeed={weather.wind.speed}
-                  humidity={weather.main.humidity}
-                  pressure={formatPressure(weather.main.pressure)}  
-                />
-              </div>
+              <BottomHalfContainer 
+                weather={weather}
+              />
+              
             </>
           )}
         </>
