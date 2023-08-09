@@ -6,7 +6,7 @@ const SearchBar = ({ setCity, weather }) => {
 
   useEffect(() => {
     if (weather.cod === '404') {
-      setErrorMessage('Oops! Please enter a valid city.');
+      setErrorMessage('Oops! Check your spelling.');
     } else {
       setErrorMessage('');
     }
@@ -20,8 +20,6 @@ const SearchBar = ({ setCity, weather }) => {
   const handleSearchClick = () => {
     if (inputCity.trim() === '') {
       setErrorMessage('Oops! Please enter a valid city.');
-    } else if (weather.cod === '404') {
-      setErrorMessage('Oops! Check your spelling.');
     } else {
       setCity(inputCity);
       setInputCity('');
