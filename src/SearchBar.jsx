@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const SearchBar = ({ setCity, weather }) => {
   const [inputCity, setInputCity] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+
+  useEffect(() => {
+    if (weather.cod === '404') {
+      setErrorMessage('Oops! Please enter a valid city.');
+    } else {
+      setErrorMessage('');
+    }
+  }, [weather]);
 
   const handleInputChange = (e) => {
     setInputCity(e.target.value);
@@ -12,12 +20,14 @@ const SearchBar = ({ setCity, weather }) => {
   const handleSearchClick = () => {
     if (inputCity.trim() === '') {
       setErrorMessage('Oops! Please enter a valid city.');
+    } else if (weather.cod === '404') {
+      setErrorMessage('Oops! Check your spelling.');
     } else {
       setCity(inputCity);
       setInputCity('');
       setErrorMessage('');
     }
-  };
+  };  
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
@@ -38,11 +48,7 @@ const SearchBar = ({ setCity, weather }) => {
       <button onClick={handleSearchClick} type="submit">
         <i className="fa-solid fa-magnifying-glass"></i>
       </button>
-      {(errorMessage || (weather.cod === '404')) && (
-      <p className="error">
-        {errorMessage || 'Oops! Something went wrong. Check your spelling.'}
-      </p>
-    )}
+      <p className="error">{errorMessage}</p>
     </div>
   );
 };
