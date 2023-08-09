@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import placeholderImg from './myIcons/placeholderImg.png';
 import LocationInfo from './LocationInfo';
+import DateAndTime from './DateAndTime';
 import WeatherIcons from './WeatherIcons';
 import MainTemperatures from './MainTemperatures';
 import BottomHalfContainer from './BottomHalfContainer';
@@ -8,9 +9,7 @@ import BottomHalfContainer from './BottomHalfContainer';
 const WeatherData = ({ weather }) => {
   let [weatherIconUrl, setWeatherIconUrl] = useState('');
   const [currentTimeInLocation, setCurrentTimeInLocation] = useState(null);
-  const [localTime, setLocalTime] = useState('');
-  
-  // Define isDaytime here, based on the current hour
+
   const currentHour = currentTimeInLocation?.getUTCHours();
   const isDaytime = currentHour >= 6 && currentHour < 20;
 
@@ -26,19 +25,6 @@ const WeatherData = ({ weather }) => {
     }
   }, [weather]);
 
-  useEffect(() => {
-    if (currentTimeInLocation) {
-      const localTimeInLocation = new Intl.DateTimeFormat(undefined, {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      }).format(currentTimeInLocation);
-
-      setLocalTime(localTimeInLocation);
-    }
-  }, [currentTimeInLocation]);
-
 
   return (
     <div className="AppContainer">
@@ -51,7 +37,7 @@ const WeatherData = ({ weather }) => {
           <LocationInfo weather={weather} />
           {weather.main && (
               <>
-                <p className="dateAndTime">{localTime}</p>
+                <DateAndTime currentTimeInLocation={currentTimeInLocation} />
 
                 <MainTemperatures
                   temperature={weather.main.temp}
