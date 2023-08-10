@@ -191,7 +191,7 @@ input {
 }
 
 .day .placeholderImage {
-    background: linear-gradient(60deg, var(--lighblued) 20%, var(--lightblued));
+    background: linear-gradient(45deg, var(--lightblued), var(--darkblued));
 }
 
 .city {
@@ -376,7 +376,9 @@ select {
     font-size: 0.75rem;
     background-color: var(--black);
     color: var(--white);
-    border: 1.5px solid rgb(103, 103, 103);
+    cursor: pointer;
+    border: 0.25px solid rgb(88, 88, 88);
+    padding: 0 5px;
 }
 
 .day select {

@@ -11,6 +11,8 @@ function App() {
   const [city, setCity] = useState('');
   const [weather, setWeather] = useState({});
   const [darkMode, setDarkMode] = useState(true); // Default is dark mode
+  const [selectedUnit, setSelectedUnit] = useState('metric'); // Default is Celsius
+
 
   useEffect(() => {
     if (city) {
@@ -51,13 +53,13 @@ function App() {
 
   return (
     <div className={`App ${darkMode ? 'night' : 'day'}`}>
-      <SelectUnits />
+      <SelectUnits selectedUnit={selectedUnit} setSelectedUnit={setSelectedUnit} />
       <div className="wrapper">
         <ThemeBar handleToggleTheme={handleToggleTheme} darkMode={darkMode} />
         <div className="mainContainer">
           <Header setCity={setCity} searchCity={searchCity} weather={weather}/>
           <div className="AppContainer">
-            <WeatherData weather={weather} />
+          <WeatherData weather={weather} selectedUnit={selectedUnit} />
           </div>
         </div>
         <Footer />
@@ -68,3 +70,4 @@ function App() {
 }
 
 export default App
+
