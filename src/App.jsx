@@ -44,24 +44,25 @@ function App() {
     });
   }
 
-  const toggleTheme = () => {
+  const handleToggleTheme = () => {
     setDarkMode(prevTheme => !prevTheme);
   };
 
-  const appBackgroundColor = darkMode ? '#000' : '#fff'; 
-
   return (
-    <div className="App" style={{ backgroundColor: appBackgroundColor }}>
-      <ThemeBar toggleTheme={toggleTheme} darkMode={darkMode} />
-      <div className="mainContainer">
-        <Header setCity={setCity} searchCity={searchCity} weather={weather}/>
-        <div className="AppContainer">
-          <WeatherData weather={weather} />
+    <div className={`App ${darkMode ? 'night' : 'day'}`}>
+      <div className="wrapper">
+        <ThemeBar handleToggleTheme={handleToggleTheme} darkMode={darkMode} />
+        <div className="mainContainer">
+          <Header setCity={setCity} searchCity={searchCity} weather={weather}/>
+          <div className="AppContainer">
+            <WeatherData weather={weather} />
+          </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
-  )
+  );
+  
 }
 
 export default App
