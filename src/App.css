@@ -125,7 +125,7 @@ input {
     position: absolute;
     object-fit: contain;
     background: linear-gradient(45deg, rgb(43, 93, 215), rgb(11, 19, 53));
-    border-radius: 75px;
+    border-radius: 65px;
 }
 
 .city {
