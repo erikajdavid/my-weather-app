@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import ThemeBar from './ThemeBar';
+import SelectUnits from './SelectUnits';
 import Header from './Header';
 import WeatherData from './WeatherData';
 import Footer from './Footer';
@@ -50,6 +51,7 @@ function App() {
 
   return (
     <div className={`App ${darkMode ? 'night' : 'day'}`}>
+      <SelectUnits />
       <div className="wrapper">
         <ThemeBar handleToggleTheme={handleToggleTheme} darkMode={darkMode} />
         <div className="mainContainer">
