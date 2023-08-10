@@ -174,7 +174,7 @@ input {
     width: 384px;
     height: 55%;
     background-color: rgb(11, 19, 53);
-    border-radius: 60px 60px 75px 75px;
+    border-radius: 60px 60px 70px 70px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
