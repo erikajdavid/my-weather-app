@@ -6,13 +6,25 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
+:root {
+    --black: rgb(14, 14, 14);
+    --white: rgb(251, 251, 253);
+    --red: rgb(182, 1, 1);
+    --purple: rgb(206, 20, 206);
+    --lightbluen: rgb(43, 93, 215);
+    --darkbluen: rgb(11, 19, 53);
+    --lightblued: rgb(44, 134, 246);
+    --darkblued: rgb(0, 67, 173);
+    --lightgrey: rgb(229, 229, 229);
+    --grey: rgb(210, 210, 210);
+}
+
 body {
     display: flex;
     justify-content: center;
     font-weight: 400;
     font-size: 18px;
-    background-color: rgb(14, 14, 14);
-    color: rgb(228, 228, 228);
+    background-color: var(--black);
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
@@ -38,7 +50,7 @@ p, h1, h2, h3 {
 }
 
  .App.day {
-    background-color: rgb(251, 251, 253);
+    background-color: var(--white);
  }
 
 .wrapper {
@@ -63,7 +75,7 @@ header {
 }
 
 .day header {
-    color: black;
+    color: var(--black);
 }
 header h1 {
     font-size: 2.75rem;
@@ -96,19 +108,19 @@ input {
 }
 
 .day input {
-    background-color: rgb(229, 229, 229);
+    background-color: var(--lightgrey);
     border: none;
-    color: rgb(14, 14, 14);
+    color: var(--black);
 }
 
 .day input::placeholder {
-    color: rgb(43, 93, 215);
+    color: var(--lightbluen);
 }
 
 .inputSearchBar button {
     all: revert;
     text-transform: uppercase;
-    background-color: rgb(43, 93, 215);
+    background-color: var(--lightbluen);
     height: 2.5rem;
     padding: 0 1rem;
     font-size: 1.15rem;
@@ -120,7 +132,7 @@ input {
 }
 
 .day .inputSearchBar button {
-    background-color: rgb(44, 134, 246);
+    background-color: var(--lightbluen);
 }
 
 .inputSearchBar button:hover {
@@ -128,26 +140,26 @@ input {
 }
 
 .error {
-    color: rgb(182, 1, 1);
+    color: var(--red);
     position: absolute;
     top: 70%;
     font-size: 0.85rem;
 }
 
 .errorInput{
-    border: 1px solid rgb(182, 1, 1);
+    border: 1px solid var(--red);
 }
 
 .day .error {
-    color: rgb(206, 20, 206);
+    color: var(--purple);
 }
 
 .day .errorInput {
-    border: 1px solid rgb(206, 20, 206);
+    border: 1px solid var(--purple);
 }
 
 .AppContainer {
-    background-color: rgb(43, 93, 215);
+    background-color: var(--lightbluen);
     width: 400px;
     height: 680px;
     display: flex;
@@ -156,18 +168,18 @@ input {
     align-items: center;
     border-radius: 75px;
     position: relative;
-    border-top: 5px solid white;
-    border-bottom: 5px solid white;
-    border-right: 8px solid white;
-    border-left: 8px solid white;
+    border-top: 5px solid var(--white);
+    border-bottom: 5px solid var(--white);
+    border-right: 8px solid var(--white);
+    border-left: 8px solid var(--white);
 }
 
 .day .AppContainer {
-    border-top: 5px solid rgb(210, 210, 210);
-    border-bottom: 5px solid rgb(210, 210, 210);
-    border-right: 8px solid rgb(210, 210, 210);
-    border-left: 8px solid rgb(210, 210, 210);
-    background-color: rgb(44, 134, 246);
+    border-top: 5px solid var(--grey);
+    border-bottom: 5px solid var(--grey);
+    border-right: 8px solid var(--grey);
+    border-left: 8px solid var(--grey);
+    background-color: var(--lightbluen);
 }
 
 .placeholderImage {
@@ -178,12 +190,12 @@ input {
     transform: translate(-50%, -50%);
     position: absolute;
     object-fit: contain;
-    background: linear-gradient(45deg, rgb(43, 93, 215), rgb(11, 19, 53));
+    background: linear-gradient(45deg, var(--lightbluen), var(--darkbluen));
     border-radius: 65px;
 }
 
 .day .placeholderImage {
-    background: linear-gradient(60deg, rgb(0, 67, 173) 20%, rgb(26, 110, 211), rgb(44, 134, 246));
+    background: linear-gradient(60deg, var(--lighblued) 20%, var(--lightblued));
 }
 
 .city {
@@ -231,7 +243,7 @@ input {
 .bottomHalfContainer {
     width: 384px;
     height: 55%;
-    background-color: rgb(11, 19, 53);
+    background-color: var(--darkbluen);
     border-radius: 60px 60px 70px 70px;
     display: flex;
     flex-direction: column;
@@ -240,7 +252,7 @@ input {
 }
 
 .day .bottomHalfContainer {
-    background-color: rgb(0, 67, 173);
+    background-color: var(--darkblued);
 }
 
 .tempIcon {
@@ -261,7 +273,7 @@ input {
 .extraInfoContainer {
     width: 100px;
     height: 110px;
-    background: linear-gradient(rgb(43, 93, 215), rgb(11, 19, 53));
+    background: linear-gradient(var(--lightbluen), var(--darkbluen));
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -273,7 +285,7 @@ input {
 }
 
 .day .extraInfoContainer {
-    background: linear-gradient(rgb(44, 134, 246), rgb(0, 67, 173));
+    background: linear-gradient(var(--lightblued), var(--darkblued));
 }
 
 .extraInfoTitle {
@@ -297,15 +309,15 @@ input {
 }
 
 .day .footerContainer {
-    color: rgb(14, 14, 14);
+    color: var(--black);
 }
 
 .footerContainer a {
-    color: rgb(43, 93, 215);
+    color: var(--lightbluen);
 }
 
 .day .footerContainer a {
-    color: rgb(44, 134, 246);
+    color: var(--lightblued);
 }
 
 .footerContainer a:hover {
@@ -316,8 +328,8 @@ input {
     width: auto;
     border-radius: 2rem;
     display: flex;
-    background-color: rgb(43, 93, 215);    
-    border: 2px solid rgb(43, 93, 215);
+    background-color: var(--lightbluen);    
+    border: 2px solid var(--lightbluen);
     position: absolute;
     top: 0;
     left: 0;
@@ -325,8 +337,8 @@ input {
 }
 
 .day .modes {
-    background-color: white;
-    border: 2px solid rgb(44, 134, 246);
+    background-color: var(--white);
+    border: 2px solid var(--lightblued)
 }
 
 .modes i {
@@ -335,7 +347,7 @@ input {
 }
 
 .day .modes i {
-    color: rgb(44, 134, 246);
+    color: var(--lightblued);
 }
 
 .fa-sun {
@@ -346,7 +358,7 @@ input {
     position: absolute;
     top: 12%;
     left: 8%;
-    background-color: rgb(11, 19, 53);
+    background-color: var(--darkbluen);
     width: 2.25rem;
     height: 2.25rem;
     border-radius: 2rem;
@@ -354,6 +366,6 @@ input {
 }
 
 .day .slider {
-    background-color: rgb(44, 134, 246);
+    background-color: var(--lightblued);
 }
 
