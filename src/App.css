@@ -237,3 +237,26 @@ input {
 .footerContainer a:hover {
     color: rgb(132, 132, 255);
 }
+
+.toggleBar {
+    width: auto;
+    border-radius: 2rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: absolute;
+    top: 50%;
+    right: -10%;
+    background-color: rgb(43, 93, 215);
+}
+
+.toggleBar i {
+    font-size: 1.5rem;
+}
+
+.fa-sun {
+    padding-bottom: 1.5rem;
+}
+
+

@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
+import ThemeBar from './ThemeBar';
 import Header from './Header';
 import WeatherData from './WeatherData';
 import Footer from './Footer';
-
 import './App.css'
 
 function App() {
@@ -46,6 +46,7 @@ function App() {
 
   return (
     <div className="App">
+      <ThemeBar />
       <div className="mainContainer">
         <Header setCity={setCity} searchCity={searchCity} weather={weather}/>
         <div className="AppContainer">
