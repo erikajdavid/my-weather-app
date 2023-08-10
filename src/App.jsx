@@ -9,13 +9,13 @@ function App() {
 
   const [city, setCity] = useState('');
   const [weather, setWeather] = useState({});
+  const [darkMode, setDarkMode] = useState(true); // Default is dark mode
 
   useEffect(() => {
     if (city) {
       searchCity();
     }
   }, [city]);
-
 
   const searchCity = () => {
     const apiKey = "70335af88254b66a82ea739a9b7de916";
@@ -44,9 +44,15 @@ function App() {
     });
   }
 
+  const toggleTheme = () => {
+    setDarkMode(prevTheme => !prevTheme);
+  };
+
+  const appBackgroundColor = darkMode ? '#000' : '#fff'; 
+
   return (
-    <div className="App">
-      <ThemeBar />
+    <div className="App" style={{ backgroundColor: appBackgroundColor }}>
+      <ThemeBar toggleTheme={toggleTheme} darkMode={darkMode} />
       <div className="mainContainer">
         <Header setCity={setCity} searchCity={searchCity} weather={weather}/>
         <div className="AppContainer">

@@ -1,13 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const ThemeBar = () => {
-  const [isSunTheme, setIsSunTheme] = useState(true); // Assuming sun theme is the default
-
-  const toggleTheme = () => {
-    setIsSunTheme(prevTheme => !prevTheme);
-  };
-
-  const sliderPosition = isSunTheme ? '8%' : '50%'; 
+const ThemeBar = ({ toggleTheme, darkMode }) => {
+  const sliderPosition = darkMode ? '8%' : '50%'; 
 
   return (
     <div className="toggleBar">
