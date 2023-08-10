@@ -112,7 +112,7 @@ input {
     height: 2.5rem;
     padding: 0 1rem;
     font-size: 1.15rem;
-    margin-left: 0.05rem;
+    margin-left: 0.15rem;
     border: none;
     cursor: pointer;
     transition: all 0.25s ease;
@@ -138,8 +138,12 @@ input {
     border: 1px solid rgb(182, 1, 1);
 }
 
+.day .error {
+    color: rgb(206, 20, 206);
+}
+
 .day .errorInput {
-    border: 1px solid rgb(182, 1, 1);
+    border: 1px solid rgb(206, 20, 206);
 }
 
 .AppContainer {
@@ -159,10 +163,10 @@ input {
 }
 
 .day .AppContainer {
-    border-top: 5px solid rgb(186, 186, 186);
-    border-bottom: 5px solid rgb(186, 186, 186);
-    border-right: 8px solid rgb(186, 186, 186);
-    border-left: 8px solid rgb(186, 186, 186);
+    border-top: 5px solid rgb(210, 210, 210);
+    border-bottom: 5px solid rgb(210, 210, 210);
+    border-right: 8px solid rgb(210, 210, 210);
+    border-left: 8px solid rgb(210, 210, 210);
     background-color: rgb(44, 134, 246);
 }
 
@@ -179,7 +183,7 @@ input {
 }
 
 .day .placeholderImage {
-    background: linear-gradient(60deg, rgb(0, 67, 173) 20%, rgb(44, 134, 246));
+    background: linear-gradient(60deg, rgb(0, 67, 173) 20%, rgb(26, 110, 211), rgb(44, 134, 246));
 }
 
 .city {
@@ -312,7 +316,8 @@ input {
     width: auto;
     border-radius: 2rem;
     display: flex;
-    background-color: rgb(43, 93, 215);
+    background-color: rgb(43, 93, 215);    
+    border: 2px solid rgb(43, 93, 215);
     position: absolute;
     top: 0;
     left: 0;
@@ -345,7 +350,7 @@ input {
     width: 2.25rem;
     height: 2.25rem;
     border-radius: 2rem;
-    transition: 0.5s ease-in;
+    transition: 0.4s ease-in;
 }
 
 .day .slider {
