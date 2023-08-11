@@ -175,7 +175,7 @@ input {
     border-bottom: 5px solid var(--grey);
     border-right: 8px solid var(--grey);
     border-left: 8px solid var(--grey);
-    background-color: var(--lightbluen);
+    background-color: var(--lightblued);
 }
 
 .placeholderImage {
