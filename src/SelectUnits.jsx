@@ -1,16 +1,20 @@
+import React from 'react';
+
 const SelectUnits = ({ selectedUnit, setSelectedUnit }) => {
-  const handleUnitChange = (event) => {
-    setSelectedUnit(event.target.value);
+
+  const sliderPosition =  selectedUnit === 'metric' ? '8%' : '50%';
+
+  const toggleUnits = () => {
+    const newUnit = selectedUnit === 'metric' ? 'imperial' : 'metric';
+    setSelectedUnit(newUnit);
   };
 
   return (
-    <form action="#" method="#" className="units" name="units">
-      <label htmlFor="selectUnits"></label>
-      <select id="selectUnits" name="selectUnits" value={selectedUnit} onChange={handleUnitChange}>
-        <option value="metric">Celsius °C</option>
-        <option value="imperial">Fahrenheit F</option>
-      </select>
-    </form>
+    <section className="units" onClick={toggleUnits}>
+      <p>F</p>
+      <p>°C</p>
+      <div className="sliderTwo" style={{ top: sliderPosition }}></div>
+    </section>
   );
 };
 

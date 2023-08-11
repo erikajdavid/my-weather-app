@@ -53,9 +53,9 @@ function App() {
 
   return (
     <div className={`App ${darkMode ? 'night' : 'day'}`}>
-      <SelectUnits selectedUnit={selectedUnit} setSelectedUnit={setSelectedUnit} />
       <div className="wrapper">
         <ThemeBar handleToggleTheme={handleToggleTheme} darkMode={darkMode} />
+        <SelectUnits selectedUnit={selectedUnit} setSelectedUnit={setSelectedUnit} />
         <div className="mainContainer">
           <Header setCity={setCity} searchCity={searchCity} weather={weather}/>
           <div className="AppContainer">
