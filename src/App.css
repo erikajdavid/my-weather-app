@@ -394,7 +394,7 @@ select {
     right: -5%;
     padding: 0.1rem;
     cursor: pointer;
-    padding: 0 0..2rem;
+    padding: 0 0.2rem;
 }
 
 .units p {
@@ -404,10 +404,20 @@ select {
 .sliderTwo {
     position: absolute;
     top: 0%;
-    left: 0%;
+    left: 5%;
     background-color: var(--darkbluen);
     width: 1.6rem;
     height: 1.6rem;
     border-radius: 2rem;
     transition: 0.4s ease-in;
+}
+
+.day .units {
+    background-color: var(--lightgrey);  
+    border: 2px solid var(--lightgrey);  
+    color: var(--lightblued);
+}
+
+.day .sliderTwo {
+    background-color: var(--lightblued);
 }
