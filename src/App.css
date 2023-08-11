@@ -330,6 +330,7 @@ input {
     top: 0;
     left: 0;
     padding: 0.7rem 0.9rem;
+    cursor: pointer;
 }
 
 .day .modes {
@@ -339,7 +340,6 @@ input {
 
 .modes i {
     font-size: 1.25rem;
-    cursor: pointer;
 }
 
 .day .modes i {
