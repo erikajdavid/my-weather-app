@@ -196,7 +196,7 @@ input {
 }
 
 .city {
-    padding-top: 2.5rem;
+    padding-top: 3rem;
     font-weight: normal;
     letter-spacing: 0.075rem;
     text-transform: capitalize;
@@ -213,7 +213,7 @@ input {
 .temp {
     font-size: 3.75rem;
     padding-right: 1rem;
-    padding-top: 1rem;
+    padding-top: 0.75rem;
 }
 
 .maxMinTempContainer {
@@ -400,7 +400,7 @@ select {
 .units p {
     font-weight: 400;
     font-size: 0.8rem;
-    padding: 0 0.3rem;
+    padding: 0 0.35rem;
 }
 
 

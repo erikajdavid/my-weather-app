@@ -2,7 +2,7 @@ import React from 'react';
 
 const SelectUnits = ({ selectedUnit, setSelectedUnit }) => {
 
-  const sliderPosition =  selectedUnit === 'metric' ? '3%' : '52%';
+  const sliderPosition =  selectedUnit === 'metric' ? '4%' : '52%';
  
   const toggleUnits = () => {
     const newUnit = selectedUnit === 'metric' ? 'imperial' : 'metric';
