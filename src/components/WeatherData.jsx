@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import placeholderImg from '../myIcons/placeholderImg.png';
+import SelectUnits from './SelectUnits';
 import LocationInfo from './LocationInfo';
 import DateAndTime from './DateAndTime';
 import WeatherIcons from './WeatherIcons';
 import MainTemperatures from './MainTemperatures';
 import BottomHalfContainer from './BottomHalfContainer';
 
-const WeatherData = ({ weather, selectedUnit }) => {
+const WeatherData = ({ weather }) => {
   let [weatherIconUrl, setWeatherIconUrl] = useState('');
   const [currentTimeInLocation, setCurrentTimeInLocation] = useState(null);
+  const [selectedUnit, setSelectedUnit] = useState('metric'); // Default is Celsius
 
   const currentHour = currentTimeInLocation?.getUTCHours();
   const isDaytime = currentHour >= 6 && currentHour < 20;
@@ -34,6 +36,7 @@ const WeatherData = ({ weather, selectedUnit }) => {
         </div>
       ) : (
         <>
+          <SelectUnits selectedUnit={selectedUnit} setSelectedUnit={setSelectedUnit} />
           <LocationInfo weather={weather} />
           <DateAndTime currentTimeInLocation={currentTimeInLocation} />
           <MainTemperatures

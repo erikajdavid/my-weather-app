@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import ThemeBar from './components/ThemeBar';
-import SelectUnits from './components/SelectUnits';
 import Header from './components/Header';
 import WeatherData from './components/WeatherData';
 import Footer from './components/Footer';
@@ -10,9 +9,8 @@ function App() {
 
   const [city, setCity] = useState('');
   const [weather, setWeather] = useState({});
-  const [darkMode, setDarkMode] = useState(true); // Default is dark mode
+  const [darkMode, setDarkMode] = useState(true); 
   const [selectedUnit, setSelectedUnit] = useState('metric'); // Default is Celsius
-
 
   useEffect(() => {
     if (city) {
@@ -58,7 +56,6 @@ function App() {
         <div className="mainContainer">
           <Header setCity={setCity} searchCity={searchCity} weather={weather}/>
           <div className="AppContainer">
-          <SelectUnits selectedUnit={selectedUnit} setSelectedUnit={setSelectedUnit} />
           <WeatherData weather={weather} selectedUnit={selectedUnit} />
           </div>
         </div>
