@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import ThemeBar from './ThemeBar';
-import SelectUnits from './SelectUnits';
-import Header from './Header';
-import WeatherData from './WeatherData';
-import Footer from './Footer';
+import ThemeBar from './components/ThemeBar';
+import SelectUnits from './components/SelectUnits';
+import Header from './components/Header';
+import WeatherData from './components/WeatherData';
+import Footer from './components/Footer';
 import './App.css'
 
 function App() {

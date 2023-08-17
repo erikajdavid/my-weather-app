@@ -1,7 +1,7 @@
 import React from 'react';
-import windIcon from './myIcons/wind.png';
-import humidityIcon from './myIcons/humidity.png';
-import pressureIcon from './myIcons/pressure.png';
+import windIcon from '../myIcons/wind.png';
+import humidityIcon from '../myIcons/humidity.png';
+import pressureIcon from '../myIcons/pressure.png';
 
 const ExtraFeatures = ({ windSpeed, humidity, pressure }) => (
     <div className="extras">

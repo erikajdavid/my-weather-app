@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import placeholderImg from './myIcons/placeholderImg.png';
+import placeholderImg from '../myIcons/placeholderImg.png';
 import LocationInfo from './LocationInfo';
 import DateAndTime from './DateAndTime';
 import WeatherIcons from './WeatherIcons';
