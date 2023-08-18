@@ -9,7 +9,7 @@ function App() {
 
   const [city, setCity] = useState('');
   const [weather, setWeather] = useState({});
-  const [darkMode, setDarkMode] = useState(true); 
+  const [mode, setMode] = useState('night'); 
   const [selectedUnit, setSelectedUnit] = useState('metric'); // Default is Celsius
 
   useEffect(() => {
@@ -46,13 +46,13 @@ function App() {
   }
 
   const handleToggleTheme = () => {
-    setDarkMode(prevTheme => !prevTheme);
+    setMode(prevTheme => !prevTheme);
   };
 
   return (
-    <div className={`App ${darkMode ? 'night' : 'day'}`}>
+    <div className={`App ${mode ? 'night' : 'day'}`}>
       <div className="wrapper">
-        <ThemeBar handleToggleTheme={handleToggleTheme} darkMode={darkMode} />
+        <ThemeBar handleToggleTheme={handleToggleTheme} mode={mode} />
         <div className="mainContainer">
           <Header setCity={setCity} searchCity={searchCity} weather={weather}/>
           <div className="AppContainer">
@@ -68,3 +68,9 @@ function App() {
 
 export default App
 
+
+// put API in env file for privacy
+// user authentification using firebase
+// sign in page routing
+// sign out page routing
+// ugh maybe an account user interface yuck
