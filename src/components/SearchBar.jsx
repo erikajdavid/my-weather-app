@@ -42,8 +42,8 @@ const SearchBar = ({ setCity, weather }) => {
         type="text"
         placeholder="Enter your city"
         value={inputCity}
-        onChange={handleInputChange} // anonymous function here?
-        onKeyDown={handleKeyPress} // anonymous function here?
+        onChange={handleInputChange} 
+        onKeyDown={handleKeyPress} 
         required
       />
       <button onClick={handleSearchClick} type="submit">
