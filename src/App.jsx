@@ -31,18 +31,18 @@ function App() {
       })
     
     fetch(newUrl)
-    .then(res => res.json())
-    .then(results => {
-      if (results.cod === '404') {
-        setWeather({ cod: '404', message: results.message });
-      } else {
-        setWeather(results);
-      }
+      .then(res => res.json())
+      .then(results => {
+        if (results.cod === '404') {
+          setWeather({ cod: '404', message: results.message });
+        } else {
+          setWeather(results);
+        }
     })
-    .catch(error => {
-      console.error('Error fetching weather data:', error);
-      setWeather({ cod: '500', message: 'Server error. Please try again later.' });
-    });
+      .catch(error => {
+        console.error('Error fetching weather data:', error);
+        setWeather({ cod: '500', message: 'Server error. Please try again later.' });
+      });
   }
 
   const handleToggleTheme = () => {
@@ -56,7 +56,7 @@ function App() {
         <div className="mainContainer">
           <Header setCity={setCity} searchCity={searchCity} weather={weather}/>
           <div className="AppContainer">
-          <WeatherData weather={weather} selectedUnit={selectedUnit} />
+          <WeatherData weather={weather} selectedUnit={selectedUnit} setSelectedUnit={setSelectedUnit} />
           </div>
         </div>
         <Footer />

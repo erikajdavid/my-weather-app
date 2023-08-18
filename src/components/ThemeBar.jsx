@@ -9,7 +9,7 @@ const ThemeBar = ({ handleToggleTheme, darkMode }) => {
   };
 
   return (
-    <section className="modes" onClick={handleThemeClick}>
+    <section className="modes" onClick={() => handleThemeClick}>
       <i className="far fa-sun"></i>
       <i className="fas fa-moon"></i>
       <div className="slider" style={{ left: sliderPosition }}></div>
