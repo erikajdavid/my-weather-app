@@ -1,12 +1,12 @@
 import React from 'react';
 
-const SelectUnits = ({ selectedUnit, setSelectedUnit }) => {
+const SelectUnits = ({ unit, setUnit }) => {
 
-  const sliderPosition =  selectedUnit === 'metric' ? '4%' : '52%';
+  const sliderPosition =  unit === 'metric' ? '4%' : '52%';
  
   const toggleUnits = () => {
-    const newUnit = selectedUnit === 'metric' ? 'imperial' : 'metric';
-    setSelectedUnit(newUnit);
+    const newUnit = unit === 'metric' ? 'imperial' : 'metric';
+    setUnit(newUnit);
   };
 
   return (

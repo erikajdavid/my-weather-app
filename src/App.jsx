@@ -10,7 +10,7 @@ function App() {
   const [city, setCity] = useState('');
   const [weather, setWeather] = useState({});
   const [mode, setMode] = useState('night'); 
-  const [selectedUnit, setSelectedUnit] = useState('metric'); // Default is Celsius
+  const [unit, setUnit] = useState('metric'); // Default is Celsius
 
   useEffect(() => {
     if (city) {
@@ -56,7 +56,7 @@ function App() {
         <div className="mainContainer">
           <Header setCity={setCity} searchCity={searchCity} weather={weather}/>
           <div className="AppContainer">
-          <WeatherData weather={weather} selectedUnit={selectedUnit} setSelectedUnit={setSelectedUnit} />
+          <WeatherData weather={weather} unit={unit} setUnit={setUnit} />
           </div>
         </div>
         <Footer />

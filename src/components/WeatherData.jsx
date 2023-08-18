@@ -10,7 +10,7 @@ import BottomHalfContainer from './BottomHalfContainer';
 const WeatherData = ({ weather }) => {
   let [weatherIconUrl, setWeatherIconUrl] = useState('');
   const [currentTimeInLocation, setCurrentTimeInLocation] = useState(null);
-  const [selectedUnit, setSelectedUnit] = useState('metric'); // Default is Celsius
+  const [unit, setUnit] = useState('metric'); // Default is Celsius
 
   const currentHour = currentTimeInLocation?.getUTCHours();
   const isDaytime = currentHour >= 6 && currentHour < 20;
@@ -36,17 +36,17 @@ const WeatherData = ({ weather }) => {
         </div>
       ) : (
         <>
-          <SelectUnits selectedUnit={selectedUnit} setSelectedUnit={setSelectedUnit} />
+          <SelectUnits unit={unit} setUnit={setUnit} />
           <LocationInfo weather={weather} />
           <DateAndTime currentTimeInLocation={currentTimeInLocation} />
           <MainTemperatures
             temperature={weather.main.temp}
             maxTemperature={weather.main.temp_max}
             minTemperature={weather.main.temp_min}
-            unit={selectedUnit}
+            unit={unit}
           />
           <WeatherIcons weatherCondition={weather.weather[0].main} isDaytime={isDaytime} />
-          <BottomHalfContainer weather={weather} temperature={weather.main.feels_like} unit={selectedUnit} />
+          <BottomHalfContainer weather={weather} temperature={weather.main.feels_like} unit={unit} />
         </>
       )}
     </div>
