@@ -10,7 +10,7 @@ function App() {
   const [city, setCity] = useState('');
   const [weather, setWeather] = useState({});
   const [mode, setMode] = useState('night'); 
-  const [unit, setUnit] = useState('metric'); // Default is Celsius
+  const [unit, setUnit] = useState('metric'); 
 
   useEffect(() => {
     if (city) {
