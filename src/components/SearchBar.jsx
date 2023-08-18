@@ -46,7 +46,7 @@ const SearchBar = ({ setCity, weather }) => {
         onKeyDown={handleKeyPress} // anonymous function here?
         required
       />
-      <button onClick={() => handleSearchClick} type="submit">
+      <button onClick={handleSearchClick} type="submit">
         <i className="fa-solid fa-magnifying-glass"></i>
       </button>
       <p className="error">{errorMessage}</p>

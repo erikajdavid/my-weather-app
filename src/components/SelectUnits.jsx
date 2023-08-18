@@ -10,7 +10,7 @@ const SelectUnits = ({ selectedUnit, setSelectedUnit }) => {
   };
 
   return (
-    <section className="units" onClick={() => toggleUnits}>
+    <section className="units" onClick={toggleUnits}>
       <p className="fUnit">F</p>
       <p className="cUnit">°C</p>
       <div className="sliderTwo" style={{ left: sliderPosition }}></div>
