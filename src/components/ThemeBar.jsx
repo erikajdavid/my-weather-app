@@ -10,11 +10,11 @@ const ThemeBar = ({ handleToggleTheme, mode }) => {
   };
 
   return (
-    <section className="modes" onClick={handleThemeClick}>
+    <div className="modes" onClick={handleThemeClick}>
       <i className="far fa-sun"></i>
       <i className="fas fa-moon"></i>
       <div className="slider" style={{ left: sliderPosition }}></div>
-    </section>
+    </div>
   );
 }
 

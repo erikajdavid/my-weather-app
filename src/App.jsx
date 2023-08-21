@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
+import Header from './components/Header'
 import ThemeBar from './components/ThemeBar';
-import Header from './components/Header';
+import HeroText from './components/HeroText';
 import WeatherData from './components/WeatherData';
 import Footer from './components/Footer';
 import './App.css'
@@ -45,16 +46,13 @@ function App() {
       });
   }
 
-  const handleToggleTheme = () => {
-    setMode(prevTheme => !prevTheme);
-  };
 
   return (
     <div className={`App ${mode ? 'night' : 'day'}`}>
       <div className="wrapper">
-        <ThemeBar handleToggleTheme={handleToggleTheme} mode={mode} />
+        <Header mode={mode} setMode={setMode}/>
         <div className="mainContainer">
-          <Header setCity={setCity} searchCity={searchCity} weather={weather}/>
+          <HeroText setCity={setCity} searchCity={searchCity} weather={weather}/>
           <div className="AppContainer">
           <WeatherData weather={weather} unit={unit} setUnit={setUnit} />
           </div>

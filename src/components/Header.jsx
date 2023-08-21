@@ -1,15 +1,20 @@
-import React from 'react';
-import SearchBar from './SearchBar';
+import ThemeBar from "./ThemeBar";
 
-const Header = ({ setCity, searchCity, weather }) => {
+const Header = ( {mode, setMode} ) => {
 
-  return (
-    <header>
-      <h1>My basic-ass weather app</h1>
-      <h2>A real-time international weather app that is nowhere near as complex as the one you're already using.</h2>
-      <SearchBar setCity={setCity} searchCity={searchCity} weather={weather}/>
-    </header>
-  )
+    const handleToggleTheme = () => {
+        setMode(prevTheme => !prevTheme);
+      };
+
+    return (
+        <header>
+            <ThemeBar handleToggleTheme={handleToggleTheme} mode={mode} />
+            <div>
+                <button>Sign Up</button>
+                <button>Log In</button>
+            </div>
+        </header>
+    )
 }
 
 export default Header;
