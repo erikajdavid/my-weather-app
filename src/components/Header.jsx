@@ -10,8 +10,8 @@ const Header = ( {mode, setMode} ) => {
         <header>
             <ThemeBar handleToggleTheme={handleToggleTheme} mode={mode} />
             <div>
-                <button>Sign Up</button>
-                <button>Log In</button>
+                <button className="signUpBtn">Sign Up</button>
+                <button className="logInBtn">Log In</button>
             </div>
         </header>
     )
