@@ -87,7 +87,6 @@ button {
     background-color: var(--darkblued);
 }
 
-
 .App {
     display: flex;
     flex-direction: column;
@@ -456,7 +455,7 @@ select {
     cursor: pointer;
     padding: 0.15rem 0.2rem;
     top: 3%;
-    right: 10%;
+    left: 10%;
     z-index: 20;
 }
 
@@ -465,7 +464,6 @@ select {
     font-size: 0.8rem;
     padding: 0 0.35rem;
 }
-
 
 .sliderTwo {
     position: absolute;
@@ -485,4 +483,13 @@ select {
 
 .day .sliderTwo {
     background-color: var(--lightblued);
+}
+
+.faHeartOutline {
+    position: absolute;
+    z-index: 20;
+    top: 3%;
+    right: 10%;
+    font-size: 1.5rem;
+    cursor: pointer;
 }

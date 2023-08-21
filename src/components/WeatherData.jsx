@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import placeholderImg from '../myIcons/placeholderImg.png';
 import SelectUnits from './SelectUnits';
+import Favourited from './Favourited';
 import LocationInfo from './LocationInfo';
 import DateAndTime from './DateAndTime';
 import WeatherIcons from './WeatherIcons';
@@ -37,6 +38,7 @@ const WeatherData = ({ weather }) => {
       ) : (
         <>
           <SelectUnits unit={unit} setUnit={setUnit} />
+          <Favourited />
           <LocationInfo weather={weather} />
           <DateAndTime currentTimeInLocation={currentTimeInLocation} />
           <MainTemperatures
