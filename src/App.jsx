@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Header from './components/Header'
-import ThemeBar from './components/ThemeBar';
 import HeroText from './components/HeroText';
 import WeatherData from './components/WeatherData';
 import Footer from './components/Footer';
