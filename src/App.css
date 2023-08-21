@@ -259,7 +259,7 @@ input {
 }
 
 .city {
-    padding-top: 3rem;
+    padding-top: 1rem;
     letter-spacing: 0.075rem;
     text-transform: capitalize;
     font-size: 1.5rem;
@@ -446,17 +446,14 @@ select {
 
 .units {
     display: flex;
-    text-align: center;
     border-radius: 2rem;
     color: var(--lightbluen);
     background-color: var(--white);    
     border: 2px solid var(--white);
-    position: absolute;
     cursor: pointer;
     padding: 0.15rem 0.2rem;
-    top: 3%;
-    left: 10%;
     z-index: 20;
+    position: relative;
 }
 
 .units p {
@@ -485,11 +482,15 @@ select {
     background-color: var(--lightblued);
 }
 
+.unitAndFavourite {
+    padding: 1rem 2.5rem 0 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .faHeartOutline {
-    position: absolute;
     z-index: 20;
-    top: 3%;
-    right: 10%;
     font-size: 1.5rem;
     cursor: pointer;
 }

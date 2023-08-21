@@ -64,10 +64,3 @@ function App() {
 }
 
 export default App
-
-
-// put API in env file for privacy
-// user authentification using firebase
-// sign in page routing
-// sign out page routing
-// ugh maybe an account user interface yuck
