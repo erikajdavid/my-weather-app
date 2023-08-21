@@ -78,6 +78,7 @@ header {
     flex-direction: column;
     justify-content: center;
     padding-top: 5rem;
+    padding-bottom: 6rem;
 }
 
 .day .heroText {
@@ -204,9 +205,15 @@ input {
 
 .city {
     padding-top: 3rem;
-    font-weight: normal;
     letter-spacing: 0.075rem;
     text-transform: capitalize;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.dateAndTime {
+    text-align: center;
 }
 
 .mainMaxMinTempContainer {
@@ -237,11 +244,6 @@ input {
     font-size: 1.1rem;
     padding-top: 0.3rem;
     margin-bottom: 1.5rem;
-}
-
-.city {
-    font-size: 1.5rem;
-    font-weight: 600;
 }
 
 .bottomHalfContainer {
