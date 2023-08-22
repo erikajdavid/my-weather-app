@@ -22,7 +22,8 @@ const LogIn = () => {
                             type={passwordVisible ? 'text' : 'password'} 
                             name="password" 
                             className="password" 
-                            required></input>
+                            required>
+                        </input>
                         <i className={`fa-regular ${passwordVisible ? 'fa-eye' : 'fa-eye-slash'} faInvisible`} onClick={togglePasswordVisibility}></i>
                     </div>
                     <button type="submit">Log In</button>

@@ -38,7 +38,8 @@ const SignUp = () => {
                             type={confirmPasswordVisible ? 'text' : 'password'} 
                             name="confirmPassword" 
                             className="password" 
-                            required></input>
+                            required>
+                        </input>
                         <i className={`fa-regular ${confirmPasswordVisible ? 'fa-eye' : 'fa-eye-slash'} faInvisible`} onClick={toggleConfirmPasswordVisibility}></i>
                     </div>
                     <button type="submit">Get Started</button>
