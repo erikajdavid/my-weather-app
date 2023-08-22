@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom'; 
 import Header from './components/Header'
+import SignUp from './components/SignUp';
 import HeroText from './components/HeroText';
 import WeatherData from './components/WeatherData';
 import Footer from './components/Footer';
@@ -11,6 +13,7 @@ function App() {
   const [weather, setWeather] = useState({});
   const [mode, setMode] = useState('night'); 
   const [unit, setUnit] = useState('metric'); 
+  const [displaySignUp, setDisplaySignUp] = useState(false); 
 
   useEffect(() => {
     if (city) {
@@ -45,18 +48,30 @@ function App() {
       });
   }
 
+  const handleSignUpClick = () => {
+    setDisplaySignUp(true); 
+  };
+
 
   return (
     <div className={`App ${mode ? 'night' : 'day'}`}>
       <div className="wrapper">
-        <Header mode={mode} setMode={setMode}/>
-        <div className="mainContainer">
-          <HeroText setCity={setCity} searchCity={searchCity} weather={weather}/>
-          <div className="AppContainer">
-          <WeatherData weather={weather} unit={unit} setUnit={setUnit} />
-          </div>
-        </div>
-        <Footer />
+        {displaySignUp ? (
+              <Routes>
+                <Route path="/signup" element={<SignUp />} />
+              </Routes>
+            ) : (
+              <>
+                <Header mode={mode} setMode={setMode} handleSignUpClick={handleSignUpClick} />
+                <div className="mainContainer">
+                  <HeroText setCity={setCity} searchCity={searchCity} weather={weather}/>
+                <div className="AppContainer">
+                    <WeatherData weather={weather} unit={unit} setUnit={setUnit} />
+                </div>
+              </div>
+              <Footer />
+            </>
+            )}
       </div>
     </div>
   );
