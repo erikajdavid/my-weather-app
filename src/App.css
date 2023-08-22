@@ -602,3 +602,17 @@ form button:hover {
 .day .headerSignUpLink {
     color: var(--black);
 }
+
+.signedInNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signedInNav p {
+    font-size: 0.9rem;
+}
+
+.signedInNav button {
+    background-color: var(--lightbluen);
+}

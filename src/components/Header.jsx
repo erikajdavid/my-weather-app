@@ -17,7 +17,7 @@ const Header = ({ mode, setMode, displaySignUp, handleSignUpClick, displayLogIn,
         <header>
             <ThemeBar handleToggleTheme={handleToggleTheme} mode={mode} />
             {user ? (
-                <div>
+                <div className='signedInNav'>
                     <p>Welcome, {user.email}</p>
                     <button onClick={handleSignOut}>Sign Out</button>
                 </div>
