@@ -28,7 +28,6 @@ function App() {
     const metric = "metric";
     const newUrl = new URL("https://api.openweathermap.org/data/2.5/weather")
 
-
     newUrl.search = new URLSearchParams ({
         appid: apiKey,
         units: metric,
@@ -61,7 +60,6 @@ function App() {
   const handleFavouritedNotLoggedIn = () => {
     setDisplayLogIn(true); 
   }
-
 
   return (
     <div className={`App ${mode ? 'night' : 'day'}`}>

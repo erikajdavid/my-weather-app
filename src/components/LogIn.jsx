@@ -28,7 +28,7 @@ const LogIn = () => {
                     </div>
                     <button type="submit">Log In</button>
                 </form>
-                <p>Don't have an account? <Link to="/signup" className="formLink">Sign up here.</Link></p>
+                <p>Don't have an account? <Link to="/signup" className="formLink">Sign up</Link></p>
             </div>
         </div>
     )

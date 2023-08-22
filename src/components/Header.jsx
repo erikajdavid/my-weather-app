@@ -13,10 +13,10 @@ const Header = ({ mode, setMode, displaySignUp, handleSignUpClick, displayLogIn,
             <ThemeBar handleToggleTheme={handleToggleTheme} mode={mode} />
             <div className="buttonContainer">
                 <button className="signUpBtn" onClick={handleSignUpClick} displaySignUp={displaySignUp}>
-                    <Link to="/signup" className="headerLink">Sign Up</Link>
+                    <Link to="/signup" className="headerSignUpLink">Sign Up</Link>
                 </button>
                 <button className="logInBtn" onClick={handleLogInClick} displayLogIn={displayLogIn}>
-                    <Link to="/login" className="headerLink">Log In</Link>
+                    <Link to="/login" className="headerLogInLink">Log In</Link>
                 </button>
             </div>
         </header>

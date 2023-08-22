@@ -588,7 +588,11 @@ form button:hover {
     font-weight: 600;
 }
 
-.headerLink {
+.headerLogInLink, .headerSignUpLink{
     color: var(--white);
     text-decoration: none;
+}
+
+.day .headerSignUpLink {
+    color: var(--black);
 }
