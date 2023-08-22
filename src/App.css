@@ -582,3 +582,8 @@ form button:hover {
     padding: 0.94rem;
     border-radius: 0 6px 6px 0;
 }
+
+.formLink {
+    color: var(--lightbluen);
+    font-weight: 600;
+}

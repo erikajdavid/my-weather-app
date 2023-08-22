@@ -4,7 +4,7 @@ const LogIn = () => {
     return (
         <div className="signUpPage">
             <div className="formContainer">
-                <h2>Log In</h2>
+                <h2>Welcome back!</h2>
                 <form>
                     <label htmlFor="email">Email:</label>
                     <input type="email" name="email" required></input>
@@ -15,7 +15,7 @@ const LogIn = () => {
                     </div>
                     <button type="submit">Log In</button>
                 </form>
-                <p>Don't have an account? <Link to="/login">Sign up here.</Link></p>
+                <p>Don't have an account? <Link to="/signup" className="formLink">Sign up here.</Link></p>
             </div>
         </div>
     )
