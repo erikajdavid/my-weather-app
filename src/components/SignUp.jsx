@@ -20,24 +20,26 @@ const SignUp = () => {
             <div className="formContainer">
                 <h2>Sign Up</h2>
                 <form>
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" name="email" required></input>
-                    <label htmlFor="password">Password:</label>
+                    <label htmlFor="email"></label>
+                    <input type="email" name="email" placeholder="Email:" required></input>
+                    <label htmlFor="password"></label>
                     <div className="passwordContainer">
                         <input 
                             type={passwordVisible ? 'text' : 'password'} 
                             name="password" 
                             className="password" 
+                            placeholder="Password:"
                             required>
                         </input>
                         <i className={`fa-regular ${passwordVisible ? 'fa-eye' : 'fa-eye-slash'} faInvisible`} onClick={togglePasswordVisibility}></i>
                     </div>
-                    <label htmlFor="confirmPassword">Confirm Password:</label>
+                    <label htmlFor="confirmPassword"></label>
                     <div className="passwordContainer">
                         <input 
                             type={confirmPasswordVisible ? 'text' : 'password'} 
                             name="confirmPassword" 
                             className="password" 
+                            placeholder="Confirm Password:"
                             required>
                         </input>
                         <i className={`fa-regular ${confirmPasswordVisible ? 'fa-eye' : 'fa-eye-slash'} faInvisible`} onClick={toggleConfirmPasswordVisibility}></i>

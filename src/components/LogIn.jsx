@@ -14,14 +14,15 @@ const LogIn = () => {
             <div className="formContainer">
                 <h2>Welcome back!</h2>
                 <form>
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" name="email" required></input>
-                    <label htmlFor="password">Password:</label>
+                    <label htmlFor="email"></label>
+                    <input type="email" name="email" placeholder="Email:" required></input>
+                    <label htmlFor="password"></label>
                     <div className="passwordContainer">
                         <input 
                             type={passwordVisible ? 'text' : 'password'} 
                             name="password" 
-                            className="password" 
+                            className="password"
+                            placeholder="Password:" 
                             required>
                         </input>
                         <i className={`fa-regular ${passwordVisible ? 'fa-eye' : 'fa-eye-slash'} faInvisible`} onClick={togglePasswordVisibility}></i>
