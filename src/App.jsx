@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom'; 
+import { auth } from './firebase';
 import Header from './components/Header'
 import SignUp from './components/SignUp';
 import LogIn from './components/LogIn';
@@ -16,6 +17,7 @@ function App() {
   const [unit, setUnit] = useState('metric'); 
   const [displaySignUp, setDisplaySignUp] = useState(false); 
   const [displayLogIn, setDisplayLogIn] = useState(false);
+  const [user, setUser] = useState(null)
 
   useEffect(() => {
     if (city) {
@@ -49,6 +51,15 @@ function App() {
       });
   }
 
+  useEffect(() => {
+    const signOutUser = auth.onAuthStateChanged((user) => {
+      setUser(user);
+    }); 
+    return () => {
+      signOutUser(); // Cleanup the listener when the component unmounts
+    };
+  })
+
   const handleSignUpClick = () => {
     setDisplaySignUp(true); 
   };
@@ -61,14 +72,14 @@ function App() {
     setDisplayLogIn(true); 
   }
 
-  return (
+return (
     <div className={`App ${mode ? 'night' : 'day'}`}>
       <div className="wrapper">
         <Routes>
           {/* Route for the home page */}
           <Route path="/" element={
             <>
-              <Header mode={mode} setMode={setMode} handleSignUpClick={handleSignUpClick} handleLogInClick={handleLogInClick}/>
+              <Header mode={mode} setMode={setMode} handleSignUpClick={handleSignUpClick} handleLogInClick={handleLogInClick} user={user}/>
               <div className="mainContainer">
                 <HeroText setCity={setCity} searchCity={searchCity} weather={weather} />
                 <div className="AppContainer">
