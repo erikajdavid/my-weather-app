@@ -19,8 +19,14 @@ const SignUp = () => {
         setConfirmPassWordVisible(!confirmPasswordVisible);
     }
 
-    const signUpUser = () => {
+    const signUpUser = (e) => {
         e.preventDefault();
+
+        if (password !== confirmPassword) {
+            console.log("Passwords do not match");
+            return; // Exit the function if passwords do not match
+        }
+
         createUserWithEmailAndPassword(auth, email, password, confirmPassword)
         .then((userCredential) => {
             console.log(userCredential);
