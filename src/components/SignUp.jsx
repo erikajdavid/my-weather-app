@@ -49,7 +49,7 @@ const SignUp = () => {
                     <input 
                         type="email" 
                         name="email" 
-                        placeholder="Email:" 
+                        placeholder="Email" 
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required>
@@ -60,7 +60,7 @@ const SignUp = () => {
                             type={passwordVisible ? 'text' : 'password'} 
                             name="password" 
                             className="password" 
-                            placeholder="Password:"
+                            placeholder="Password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required>
@@ -73,7 +73,7 @@ const SignUp = () => {
                             type={confirmPasswordVisible ? 'text' : 'password'} 
                             name="confirmPassword" 
                             className="password" 
-                            placeholder="Confirm Password:"
+                            placeholder="Confirm Password"
                             value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
                             required>

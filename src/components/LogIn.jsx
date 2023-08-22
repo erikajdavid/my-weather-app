@@ -38,7 +38,7 @@ const LogIn = () => {
                     <input 
                         type="email" 
                         name="email" 
-                        placeholder="Email:" 
+                        placeholder="Email" 
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required></input>
@@ -48,7 +48,7 @@ const LogIn = () => {
                             type={passwordVisible ? 'text' : 'password'} 
                             name="password" 
                             className="password"
-                            placeholder="Password:" 
+                            placeholder="Password" 
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required>
