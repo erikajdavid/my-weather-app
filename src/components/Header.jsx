@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ThemeBar from "./ThemeBar";
 
-const Header = ({ mode, setMode, displaySignUp, handleSignUpClick }) => {
+const Header = ({ mode, setMode, displaySignUp, handleSignUpClick, displayLogIn, handleLogInClick }) => {
 
     const handleToggleTheme = () => {
         setMode(prevTheme => !prevTheme);
@@ -12,10 +12,10 @@ const Header = ({ mode, setMode, displaySignUp, handleSignUpClick }) => {
         <header>
             <ThemeBar handleToggleTheme={handleToggleTheme} mode={mode} />
             <div className="buttonContainer">
-                <button className="signUpBtn" onClick={handleSignUpClick} displaySign={displaySignUp}>
+                <button className="signUpBtn" onClick={handleSignUpClick} displaySignUp={displaySignUp}>
                     <Link to="/signup">Sign Up</Link>
                 </button>
-                <button className="logInBtn">
+                <button className="logInBtn" onClick={handleLogInClick} displayLogIn={displayLogIn}>
                     <Link to="/login">Log In</Link>
                 </button>
             </div>
