@@ -58,6 +58,10 @@ function App() {
     setDisplayLogIn(true); 
   };
 
+  const handleFavouritedNotLoggedIn = () => {
+    setDisplayLogIn(true); 
+  }
+
 
   return (
     <div className={`App ${mode ? 'night' : 'day'}`}>
@@ -71,9 +75,9 @@ function App() {
               <>
                 <Header mode={mode} setMode={setMode} handleSignUpClick={handleSignUpClick} handleLogInClick={handleLogInClick}/>
                 <div className="mainContainer">
-                  <HeroText setCity={setCity} searchCity={searchCity} weather={weather}/>
+                  <HeroText setCity={setCity} searchCity={searchCity} weather={weather} />
                 <div className="AppContainer">
-                    <WeatherData weather={weather} unit={unit} setUnit={setUnit} />
+                    <WeatherData weather={weather} unit={unit} setUnit={setUnit} handleFavouritedNotLoggedIn={handleFavouritedNotLoggedIn}/>
                 </div>
               </div>
               <Footer />

@@ -587,3 +587,8 @@ form button:hover {
     color: var(--lightbluen);
     font-weight: 600;
 }
+
+.headerLink {
+    color: var(--white);
+    text-decoration: none;
+}
