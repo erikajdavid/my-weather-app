@@ -13,7 +13,7 @@ const LogIn = () => {
         setPassWordVisible(!passwordVisible);
     }
 
-    const LogUserIn = (e) => {
+    const logInUser = (e) => {
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
@@ -27,7 +27,7 @@ const LogIn = () => {
         <div className="signUpPage">
             <div className="formContainer">
                 <h2>Welcome back!</h2>
-                <form onSubmit={LogUserIn}>
+                <form onSubmit={logInUser}>
                     <label htmlFor="email"></label>
                     <input 
                         type="email" 

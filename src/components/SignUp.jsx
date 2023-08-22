@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { auth } from '../firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 const SignUp = () => {
-
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [passwordVisible, setPassWordVisible] = useState(false);
     const [confirmPasswordVisible, setConfirmPassWordVisible] = useState(false);
 
@@ -15,13 +19,30 @@ const SignUp = () => {
         setConfirmPassWordVisible(!confirmPasswordVisible);
     }
 
+    const signUpUser = () => {
+        e.preventDefault();
+        createUserWithEmailAndPassword(auth, email, password, confirmPassword)
+        .then((userCredential) => {
+            console.log(userCredential);
+        }).catch((error) => {
+            console.log(error);
+        })
+    }
+
     return (
         <div className="signUpPage">
             <div className="formContainer">
                 <h2>Sign Up</h2>
-                <form>
+                <form onSubmit={signUpUser}>
                     <label htmlFor="email"></label>
-                    <input type="email" name="email" placeholder="Email:" required></input>
+                    <input 
+                        type="email" 
+                        name="email" 
+                        placeholder="Email:" 
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required>
+                    </input>
                     <label htmlFor="password"></label>
                     <div className="passwordContainer">
                         <input 
@@ -29,6 +50,8 @@ const SignUp = () => {
                             name="password" 
                             className="password" 
                             placeholder="Password:"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                             required>
                         </input>
                         <i className={`fa-regular ${passwordVisible ? 'fa-eye' : 'fa-eye-slash'} faInvisible`} onClick={togglePasswordVisibility}></i>
@@ -40,11 +63,13 @@ const SignUp = () => {
                             name="confirmPassword" 
                             className="password" 
                             placeholder="Confirm Password:"
+                            value={confirmPassword}
+                            onChange={(e) => setConfirmPassword(e.target.value)}
                             required>
                         </input>
                         <i className={`fa-regular ${confirmPasswordVisible ? 'fa-eye' : 'fa-eye-slash'} faInvisible`} onClick={toggleConfirmPasswordVisibility}></i>
                     </div>
-                    <button type="submit">Get Started</button>
+                    <button type="submit">Create an account</button>
                 </form>
                 <p>Already have an account? <Link to="/login" className="formLink">Log in</Link></p>
             </div>
