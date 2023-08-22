@@ -64,23 +64,25 @@ function App() {
   return (
     <div className={`App ${mode ? 'night' : 'day'}`}>
       <div className="wrapper">
-        {displaySignUp || displayLogIn ? (
-          <Routes>
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/login" element={<LogIn />} />
-          </Routes>
-            ) : (
-              <>
-                <Header mode={mode} setMode={setMode} handleSignUpClick={handleSignUpClick} handleLogInClick={handleLogInClick}/>
-                <div className="mainContainer">
-                  <HeroText setCity={setCity} searchCity={searchCity} weather={weather} />
+        <Routes>
+          {/* Route for the home page */}
+          <Route path="/" element={
+            <>
+              <Header mode={mode} setMode={setMode} handleSignUpClick={handleSignUpClick} handleLogInClick={handleLogInClick}/>
+              <div className="mainContainer">
+                <HeroText setCity={setCity} searchCity={searchCity} weather={weather} />
                 <div className="AppContainer">
-                    <WeatherData weather={weather} unit={unit} setUnit={setUnit} handleFavouritedNotLoggedIn={handleFavouritedNotLoggedIn}/>
+                  <WeatherData weather={weather} unit={unit} setUnit={setUnit} handleFavouritedNotLoggedIn={handleFavouritedNotLoggedIn}/>
                 </div>
               </div>
               <Footer />
             </>
-            )}
+          } />
+          {/* Route for the signup page */}
+          <Route path="/signup" element={<SignUp />} />
+          {/* Route for the login page */}
+          <Route path="/login" element={<LogIn />} />
+        </Routes>
       </div>
     </div>
   );

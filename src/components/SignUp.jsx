@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
@@ -10,7 +11,6 @@ const SignUp = () => {
     const [passwordVisible, setPassWordVisible] = useState(false);
     const [confirmPasswordVisible, setConfirmPassWordVisible] = useState(false);
 
-
     const togglePasswordVisibility = () => {
         setPassWordVisible(!passwordVisible);
     }
@@ -18,6 +18,8 @@ const SignUp = () => {
     const toggleConfirmPasswordVisibility = () => {
         setConfirmPassWordVisible(!confirmPasswordVisible);
     }
+
+    const navigate = useNavigate();
 
     const signUpUser = (e) => {
         e.preventDefault();
@@ -30,6 +32,9 @@ const SignUp = () => {
         createUserWithEmailAndPassword(auth, email, password, confirmPassword)
         .then((userCredential) => {
             console.log(userCredential);
+
+            navigate('/');
+
         }).catch((error) => {
             console.log(error);
         })
