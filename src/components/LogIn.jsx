@@ -8,6 +8,7 @@ const LogIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loginErrorMessage, setLoginErrorMessage] = useState('');
+    const [key, setKey] = useState(0); // Initialize key
 
     const [passwordVisible, setPassWordVisible] = useState(false);
 
@@ -26,6 +27,7 @@ const LogIn = () => {
         }).catch((error) => {
             console.log(error);
             setLoginErrorMessage('Invalid email or password. Please try again.')
+            setKey(prevKey => prevKey + 1); // Increment key
         })
     }
 
@@ -55,7 +57,7 @@ const LogIn = () => {
                         </input>
                         <i className={`fa-regular ${passwordVisible ? 'fa-eye' : 'fa-eye-slash'} faInvisible`} onClick={togglePasswordVisibility}></i>
                     </div>
-                    {loginErrorMessage && <p className="loginError">{loginErrorMessage}</p>}
+                    {loginErrorMessage && <p key={key} className={`loginError ${loginErrorMessage && 'shake'}`}>{loginErrorMessage}</p>}
                     <button type="submit">Log In</button>
                 </form>
                 <p>Don't have an account? <Link to="/signup" className="formLink">Sign up</Link></p>
