@@ -44,6 +44,7 @@ function App() {
         } else {
           setWeather(results);
         }
+        console.log(results);
     })
       .catch(error => {
         console.error('Error fetching weather data:', error);
@@ -83,7 +84,7 @@ return (
               <div className="mainContainer">
                 <HeroText setCity={setCity} searchCity={searchCity} weather={weather} />
                 <div className="AppContainer">
-                  <WeatherData weather={weather} unit={unit} setUnit={setUnit}  handleFavouritedNotLoggedIn={handleFavouritedNotLoggedIn}/>
+                  <WeatherData weather={weather} unit={unit} setUnit={setUnit} user={user}  handleFavouritedNotLoggedIn={handleFavouritedNotLoggedIn}/>
                 </div>
               </div>
               <Footer />

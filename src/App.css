@@ -599,6 +599,11 @@ form button:hover {
 .formLink {
     color: var(--lightbluen);
     font-weight: 600;
+    transition: all 0.2s;
+}
+
+.formLink:hover {
+    color: var(--white);
 }
 
 .headerLogInLink, .headerSignUpLink{
@@ -622,4 +627,55 @@ form button:hover {
 
 .signedInNav button {
     background-color: var(--lightbluen);
+}
+
+.day .signedInNav p {
+    color: var(--black);
+}
+
+.day .signedInNav button {
+    color: var(--white);
+    background-color: var(--lightblue);
+    transition: all 0.5s;
+} 
+
+.day .signedInNav button:hover {
+    background-color: var(--darkblued);
+}
+
+.day .formContainer {
+    background-color: var(--lightblued);
+}
+
+.day form input {
+    background-color: var(--lightgrey);
+}
+
+.day form input::placeholder {
+    color: var(--black);
+}
+
+.day .faInvisible {
+    border: none;
+    background-color: var(--lightgrey);
+    color: var(--black);
+}
+
+.day form button {
+    background-color: var(--darkblued);
+    color: var(--white);
+    transition: all 0.5s;
+}
+
+.day form button:hover {
+    background-color: var(--lightbluen);
+}
+
+.day .formContainer .formLink {
+    color: var(--white);
+    transition: all 0.25s;
+}
+
+.day .formContainer .formLink:hover {
+    color: var(--darkblued);
 }

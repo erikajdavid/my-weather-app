@@ -37,7 +37,7 @@ const WeatherData = ({ weather, user }) => {
         <>
           <div className="unitAndFavourite">
             <SelectUnits unit={unit} setUnit={setUnit} />
-            <Favourited user={user} />
+            <Favourited user={user} weather={weather} />
           </div>
           <LocationInfo weather={weather} />
           <DateAndTime currentTimeInLocation={currentTimeInLocation} />
