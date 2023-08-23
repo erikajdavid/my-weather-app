@@ -106,16 +106,14 @@ export default App
 //TO-ADD
 
 //.env file to store API keys for security
-//Firebase authetification >>>>DONE
 //Not logged in, favourites clicked, prompt to log in. 
-//Logged in, user can save a city that will always load, maybe include a 5 day forecast? 
-//Figure out UI for a logged in user.
-//Basic styling of forms for light mode. >>>>DONE
-//add error handling for incorrect user sign up/log in
-
+//Logged in, favourited city heart icon changes to pink.
+//Log out, app container displays placeholder img. 
 
 //Stretch goals
 //Maybe use a remember me for forms, so user will constantly stay signed in. 
 //Maybe implement a forgot password for forms? 
 //404 routing 
+//Logged in, user can save a city that will always load, maybe include a 5 day forecast? 
+//Figure out UI for a logged in user.
 
