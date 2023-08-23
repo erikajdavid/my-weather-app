@@ -29,6 +29,11 @@ const SignUp = () => {
     const signUpUser = async (e) => {
         e.preventDefault();
 
+        if (password.length < 6) {
+            setSignupErrorMessage('Password should be at least 6 characters long.');
+            return;
+        }
+
         if (password !== confirmPassword) {
             setPasswordsMatchError(true); // Set password match error
             return; // Exit the function if passwords do not match
