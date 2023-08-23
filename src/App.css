@@ -648,7 +648,7 @@ form button:hover {
 }
 
 .day form input {
-    background-color: var(--lightgrey);
+    background-color: var(--white);
 }
 
 .day form input::placeholder {
@@ -657,7 +657,7 @@ form button:hover {
 
 .day .faInvisible {
     border: none;
-    background-color: var(--lightgrey);
+    background-color: var(--white);
     color: var(--black);
 }
 
