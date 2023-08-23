@@ -201,7 +201,7 @@ input {
 .error {
     color: var(--red);
     position: absolute;
-    top: 70%;
+    top: 63%;
     font-size: 0.85rem;
 }
 

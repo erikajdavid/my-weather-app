@@ -106,9 +106,6 @@ export default App
 //TO-ADD
 
 //.env file to store API keys for security
-//Not logged in, favourites clicked, prompt to log in. 
-//Logged in, favourited city heart icon changes to pink.
-//Log out, app container displays placeholder img. 
 
 //Stretch goals
 //Maybe use a remember me for forms, so user will constantly stay signed in. 
