@@ -496,6 +496,12 @@ select {
     color: var(--white);
 }
 
+.faHeartSolid {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: rgb(237, 142, 158);
+}
+
 .signUpPage{
     height: 100vh;
     display: flex;

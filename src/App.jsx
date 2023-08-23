@@ -58,7 +58,7 @@ function App() {
     return () => {
       signOutUser(); // Cleanup the listener when the component unmounts
     };
-  })
+  }, [weather]);
 
   const handleSignUpClick = () => {
     setDisplaySignUp(true); 
@@ -83,7 +83,7 @@ return (
               <div className="mainContainer">
                 <HeroText setCity={setCity} searchCity={searchCity} weather={weather} />
                 <div className="AppContainer">
-                  <WeatherData weather={weather} unit={unit} setUnit={setUnit} handleFavouritedNotLoggedIn={handleFavouritedNotLoggedIn}/>
+                  <WeatherData weather={weather} unit={unit} setUnit={setUnit}  handleFavouritedNotLoggedIn={handleFavouritedNotLoggedIn}/>
                 </div>
               </div>
               <Footer />

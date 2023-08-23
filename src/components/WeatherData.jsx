@@ -8,7 +8,7 @@ import WeatherIcons from './WeatherIcons';
 import MainTemperatures from './MainTemperatures';
 import BottomHalfContainer from './BottomHalfContainer';
 
-const WeatherData = ({ weather }) => {
+const WeatherData = ({ weather, user }) => {
   let [weatherIconUrl, setWeatherIconUrl] = useState('');
   const [currentTimeInLocation, setCurrentTimeInLocation] = useState(null);
   const [unit, setUnit] = useState('metric'); // Default is Celsius
@@ -26,8 +26,7 @@ const WeatherData = ({ weather }) => {
       setCurrentTimeInLocation(currentTimeInLocation);
     }
   }, [weather]);
-
-
+  
   return (
     <div className="AppContainer">
       {!weather.main ? (
@@ -38,7 +37,7 @@ const WeatherData = ({ weather }) => {
         <>
           <div className="unitAndFavourite">
             <SelectUnits unit={unit} setUnit={setUnit} />
-            <Favourited />
+            <Favourited user={user} />
           </div>
           <LocationInfo weather={weather} />
           <DateAndTime currentTimeInLocation={currentTimeInLocation} />

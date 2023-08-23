@@ -34,11 +34,13 @@ const SignUp = () => {
         .then((userCredential) => {
             const userUID = userCredential.user.uid;
             const userEmail = userCredential.user.email;
+
             console.log(userEmail);
-            // Save UID to the Firebase Realtime Database using ref and push
+            // Save UID to the Firebase Realtime Database using ref
             const userRef = ref(database, `users/${userUID}`);
 
-            set(userRef, {uid: userUID, email: userEmail}); 
+            set(userRef, {uid: userUID, email: userEmail, favouritedCity: ''}); 
+            console.log(userCredential);
     
             navigate('/');
 
