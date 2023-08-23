@@ -32,15 +32,15 @@ const SignUp = () => {
         if (password.length < 6) {
             setSignupErrorMessage('Password should be at least 6 characters long.');
             setPasswordsMatchError(false); // Clear passwords match error
-            setKey(prevKey => prevKey + 1); // Increment key
+            setKey(prevKey => prevKey + 1); 
             return;
         }
 
         if (password !== confirmPassword) {
             setSignupErrorMessage(''); // Clear previous error message
             setPasswordsMatchError('true'); 
-            setKey(prevKey => prevKey + 1); // Increment key
-            return; // Exit the function if passwords do not match
+            setKey(prevKey => prevKey + 1); 
+            return; 
         }
 
         try {
@@ -60,7 +60,7 @@ const SignUp = () => {
             if (error.code === 'auth/email-already-in-use') {
                 setSignupErrorMessage('An account with this email already exists.');
                 setPasswordsMatchError(false); // Clear passwords match error
-                setKey(prevKey => prevKey + 1); // Increment key
+                setKey(prevKey => prevKey + 1); 
             } else {
                 console.log(error);
             }

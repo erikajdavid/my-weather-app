@@ -15,8 +15,6 @@ function App() {
   const [weather, setWeather] = useState({});
   const [mode, setMode] = useState('night'); 
   const [unit, setUnit] = useState('metric'); 
-  const [displaySignUp, setDisplaySignUp] = useState(false); 
-  const [displayLogIn, setDisplayLogIn] = useState(false);
   const [user, setUser] = useState(null)
 
   useEffect(() => {
@@ -26,7 +24,7 @@ function App() {
   }, [city]);
 
   const searchCity = () => {
-    const apiKey = "70335af88254b66a82ea739a9b7de916";
+    const apiKey ="70335af88254b66a82ea739a9b7de916";
     const metric = "metric";
     const newUrl = new URL("https://api.openweathermap.org/data/2.5/weather")
 
@@ -61,17 +59,6 @@ function App() {
     };
   }, [weather]);
 
-  const handleSignUpClick = () => {
-    setDisplaySignUp(true); 
-  };
-
-  const handleLogInClick = () => {
-    setDisplayLogIn(true); 
-  };
-
-  const handleFavouritedNotLoggedIn = () => {
-    setDisplayLogIn(true); 
-  }
 
 return (
     <div className={`App ${mode ? 'night' : 'day'}`}>
@@ -80,11 +67,11 @@ return (
           {/* Route for the home page */}
           <Route path="/" element={
             <>
-              <Header mode={mode} setMode={setMode} handleSignUpClick={handleSignUpClick} handleLogInClick={handleLogInClick} user={user}/>
+              <Header mode={mode} setMode={setMode} user={user}/>
               <div className="mainContainer">
                 <HeroText setCity={setCity} searchCity={searchCity} weather={weather} />
                 <div className="AppContainer">
-                  <WeatherData weather={weather} unit={unit} setUnit={setUnit} user={user}  handleFavouritedNotLoggedIn={handleFavouritedNotLoggedIn}/>
+                  <WeatherData weather={weather} unit={unit} setUnit={setUnit} user={user}  />
                 </div>
               </div>
               <Footer />
