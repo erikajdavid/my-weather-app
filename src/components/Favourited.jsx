@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { getDatabase, ref, onValue, push } from 'firebase/database';
+import { useNavigate } from 'react-router-dom';
 
 const Favourited = ({ weather, user }) => {
     const [isFavorited, setIsFavorited] = useState(false);
     const [fbData, setFbData] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
-        const database = getDatabase(); // Initialize the database
-        const userUID = user ? user.uid : null; // Get the user's UID from the user prop
+        const database = getDatabase();
+        const userUID = user ? user.uid : null;
         if (userUID) {
-            const childRef = ref(database, `users/${userUID}`); // Update this to match your database structure
-
+            const childRef = ref(database, `users/${userUID}`);
             onValue(childRef, (response) => {
                 const data = response.val();
                 if (data) {
@@ -19,36 +20,35 @@ const Favourited = ({ weather, user }) => {
                 }
             });
         }
-
     }, [user]);
 
     const handleFavoriteClick = () => {
-        // Toggle the favorited state
+        if (!user) {
+            navigate('/signup');
+            return;
+        }
+
         setIsFavorited(!isFavorited);
 
-        // If user is logged in, push or remove weather data to/from Firebase
         if (user) {
             const cityName = weather.name;
-            console.log('Favorited city:', cityName);
-
-            const database = getDatabase(); // Initialize the database
-            const childRef = ref(database, `users/${user.uid}`); // Update this to match your database structure
-        
-            console.log(user);
+            const database = getDatabase();
+            const childRef = ref(database, `users/${user.uid}/favoriteCity`);
 
             if (isFavorited) {
-                // Remove the weather object from the array
                 const updatedFbData = fbData.filter(item => item !== cityName);
                 setFbData(updatedFbData);
             } else {
-                // Push the weather object to Firebase
                 push(childRef, cityName);
             }
         }
     };
 
     return (
-        <i className={`fa-regular fa-heart ${isFavorited ? 'favorited' : ''}`} onClick={handleFavoriteClick}></i>
+        <i
+            className={` ${isFavorited ? 'fa-solid fa-heart faHeartSolid' : 'fa-regular fa-heart faHeartOutline'}`}
+            onClick={handleFavoriteClick}
+        ></i>
     );
 }
 
