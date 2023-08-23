@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; 
-import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const LogIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const [passwordVisible, setPassWordVisible] = useState(false);
 
@@ -14,18 +14,14 @@ const LogIn = () => {
         setPassWordVisible(!passwordVisible);
     }
 
-    const navigate = useNavigate();
-
     const logInUser = (e) => {
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             console.log(userCredential);
-
-            navigate('/');
-
         }).catch((error) => {
             console.log(error);
+            setErrorMessage('Invalid email or password')
         })
     }
 
@@ -55,6 +51,7 @@ const LogIn = () => {
                         </input>
                         <i className={`fa-regular ${passwordVisible ? 'fa-eye' : 'fa-eye-slash'} faInvisible`} onClick={togglePasswordVisibility}></i>
                     </div>
+                    {errorMessage && <p className="error">{errorMessage}</p>}
                     <button type="submit">Log In</button>
                 </form>
                 <p>Don't have an account? <Link to="/signup" className="formLink">Sign up</Link></p>
