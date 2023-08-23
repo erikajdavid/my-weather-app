@@ -32,12 +32,14 @@ const SignUp = () => {
         if (password.length < 6) {
             setSignupErrorMessage('Password should be at least 6 characters long.');
             setPasswordsMatchError(false); // Clear passwords match error
+            setKey(prevKey => prevKey + 1); // Increment key
             return;
         }
 
         if (password !== confirmPassword) {
             setSignupErrorMessage(''); // Clear previous error message
-            setPasswordsMatchError('true'); // Set password match error
+            setPasswordsMatchError('true'); 
+            setKey(prevKey => prevKey + 1); // Increment key
             return; // Exit the function if passwords do not match
         }
 
@@ -105,10 +107,11 @@ const SignUp = () => {
                         </input>
                         <i className={`fa-regular ${confirmPasswordVisible ? 'fa-eye' : 'fa-eye-slash'} faInvisible`} onClick={toggleConfirmPasswordVisibility}></i>
                     </div>
-                    {passwordsMatchError && <p className={`passwordsMatchError ${passwordsMatchError && 'shake'}`}>
-                        Passwords do not match. Please enter again.
-                    </p>}
+                    {passwordsMatchError && <p key={key} className={`passwordsMatchError ${passwordsMatchError && 'shake'}`}>
+                    Passwords do not match. Please enter again.
+                </p>}
                     {signupErrorMessage && <p key={key} className={`signupError ${signupErrorMessage && 'shake'}`}>{signupErrorMessage}</p>}
+
                     <button type="submit">Create an account</button>
                 </form>
                 <p>Already have an account? <Link to="/login" className="formLink">Log in</Link></p>

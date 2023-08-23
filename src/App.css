@@ -698,6 +698,7 @@ form button:hover {
     font-size: 1rem;
 }
 
+
 .day .loginError, .day .signupError, .day .passwordsMatchError {
     color: var(--black);
 }
