@@ -692,7 +692,7 @@ form button:hover {
     }
 }
 
-.loginError {
+.loginError, .signupError, .passwordsMatchError {
     animation: shake 0.5s;
     color: var(--red);
     font-size: 1rem;
