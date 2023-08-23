@@ -10,7 +10,9 @@ const Header = ({ mode, setMode, displaySignUp, handleSignUpClick, displayLogIn,
     };
 
     const handleSignOut = () => {
-        auth.signOut();
+        auth.signOut().then(() => {
+            window.location.reload(); // Reload the page after sign out
+        });
     }
 
     return (
