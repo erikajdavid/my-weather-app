@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { auth } from '../firebase';
+import { auth, database } from '../firebase';
+import { ref, set } from 'firebase/database';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 const SignUp = () => {
@@ -31,8 +32,14 @@ const SignUp = () => {
 
         createUserWithEmailAndPassword(auth, email, password, confirmPassword)
         .then((userCredential) => {
-            console.log(userCredential);
+            const userUID = userCredential.user.uid;
+            const userEmail = userCredential.user.email;
+            console.log(userEmail);
+            // Save UID to the Firebase Realtime Database using ref and push
+            const userRef = ref(database, `users/${userUID}`);
 
+            set(userRef, {uid: userUID, email: userEmail}); 
+    
             navigate('/');
 
         }).catch((error) => {
