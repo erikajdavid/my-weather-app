@@ -7,7 +7,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 const LogIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
+    const [loginErrorMessage, setLoginErrorMessage] = useState('');
 
     const [passwordVisible, setPassWordVisible] = useState(false);
 
@@ -25,7 +25,7 @@ const LogIn = () => {
             navigate('/');
         }).catch((error) => {
             console.log(error);
-            setErrorMessage('Invalid email or password')
+            setLoginErrorMessage('Invalid email or password. Please try again.')
         })
     }
 
@@ -55,7 +55,7 @@ const LogIn = () => {
                         </input>
                         <i className={`fa-regular ${passwordVisible ? 'fa-eye' : 'fa-eye-slash'} faInvisible`} onClick={togglePasswordVisibility}></i>
                     </div>
-                    {errorMessage && <p className="error">{errorMessage}</p>}
+                    {loginErrorMessage && <p className="loginError">{loginErrorMessage}</p>}
                     <button type="submit">Log In</button>
                 </form>
                 <p>Don't have an account? <Link to="/signup" className="formLink">Sign up</Link></p>

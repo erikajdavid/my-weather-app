@@ -679,3 +679,9 @@ form button:hover {
 .day .formContainer .formLink:hover {
     color: var(--darkblued);
 }
+
+.loginError {
+    color: var(--red);
+    font-size: 1rem;
+}
+
