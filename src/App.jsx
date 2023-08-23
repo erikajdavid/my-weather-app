@@ -24,7 +24,7 @@ function App() {
   }, [city]);
 
   const searchCity = () => {
-    const apiKey ="70335af88254b66a82ea739a9b7de916";
+    const apiKey = import.meta.env.VITE_API_KEY;
     const metric = "metric";
     const newUrl = new URL("https://api.openweathermap.org/data/2.5/weather")
 
