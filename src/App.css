@@ -635,7 +635,7 @@ form button:hover {
 
 .day .signedInNav button {
     color: var(--white);
-    background-color: var(--lightblue);
+    background-color: var(--lightblued);
     transition: all 0.5s;
 } 
 
