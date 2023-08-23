@@ -49,7 +49,7 @@ const LogIn = () => {
                             name="password" 
                             className="password"
                             placeholder="Password" 
-                            value={password}
+                            value={password}s
                             onChange={(e) => setPassword(e.target.value)}
                             required>
                         </input>
