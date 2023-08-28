@@ -90,10 +90,11 @@ button {
 .App {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     position: relative;
     width: 100vw;
+    height: 100vh;
     color: rgba(255, 255, 255, 0.87);
 }
 
@@ -106,6 +107,7 @@ button {
     width: 90%;
     margin: 0 auto;
     position: relative;
+    height: 100%;
 }
 
 header {
@@ -120,6 +122,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 2rem;
 }
 
 .heroText {
@@ -364,7 +367,7 @@ input {
     font-size: 0.8rem;
     width: 100%; 
     position: absolute;
-    bottom: 7vh;
+    bottom: 15%;
 }
 
 .day .footerContainer {
@@ -703,6 +706,10 @@ form button:hover {
 
 
 @media (max-width: 940px) {
+
+    .App {
+        height: auto;
+    }
 
     .mainContainer {
         flex-direction: column;
