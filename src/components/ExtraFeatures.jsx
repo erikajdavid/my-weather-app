@@ -10,7 +10,7 @@ const ExtraFeatures = ({ windSpeed, humidity, pressure }) => (
             <img className="miniIcon" src={windIcon} alt="wind icon" />
             <p className="extraInfoDescription">{windSpeed} km/h</p>
         </div>
-        <div className="extraInfoContainer">
+        <div className="extraInfoContainer middle">
             <p className="extraInfoTitle">Humidity:</p>
             <img className="miniIcon" src={humidityIcon} alt="humidity icon" />
             <p className="extraInfoDescription">{humidity}%</p>

@@ -23,7 +23,12 @@
 
     .heroText {
         width: 100%;
-        padding-right: 0;
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+
+    .heroText h2 {
+        padding: 1rem 0 1.5rem 0;
     }
 
     .footerContainer {
@@ -32,4 +37,68 @@
         font-size: 0.8rem;
         padding: 5rem 0 1rem 0;
     }
+}
+
+@media (max-width: 768px) {
+    .heroText h1 {
+        font-size: 2rem;
+    }
+
+    .heroText h2 {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 479px) {
+    .heroText {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .AppContainer {
+        width: 320px;
+        height: 600px;
+    }
+
+    .bottomHalfContainer {
+        width: 304px;
+    }
+
+    .temp {
+        font-size: 3rem;
+    }
+
+    .maxMinTempContainer p {
+        font-size: 1rem;
+    }
+
+    .minTemp {
+        padding-bottom: 0.5rem;
+    }
+
+    .description {
+        font-size: 1.25rem;
+    }
+
+    .feelsLikeTemp {
+        font-size: 1rem;
+    }
+
+    .extraInfoContainer {
+        margin: 0;
+        width: 90px;
+        height: 100px;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .extraInfoDescription {
+        font-size: 0.8rem;
+    }
+
+    .middle {
+        margin: 0 0.5rem;
+    }
+
 }
