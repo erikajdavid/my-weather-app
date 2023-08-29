@@ -9,6 +9,7 @@ import WeatherData from './components/WeatherData';
 import Footer from './components/Footer';
 import './App.css';
 import './styles/LightTheme.css';
+import './styles/Forms.css';
 import './styles/MediaQueries.css';
 
 function App() {
