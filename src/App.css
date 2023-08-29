@@ -41,9 +41,6 @@ body, p, h1, h2, h3 {
     margin: 0;
 }
 
-.day, .night {
-    transition: all 0.5s ease;
-}
 
 button {
     border-radius: 2rem;
@@ -67,26 +64,6 @@ button {
     border: 2px solid var(--lightbluen);
   }
 
-.day button {
-    background-color: var(--lightgrey);
-    color: var(--black);
-    border: none;
-    transition: all 0.5s;
-}
-
-.day .signUpBtn:hover {
-    background-color: var(--grey);
-}
-
-.day .logInBtn {
-    background-color: var(--lightblued);
-    color: var(--white);
-}
-
-.day .logInBtn:hover {
-    background-color: var(--darkblued);
-}
-
 .App {
     display: flex;
     flex-direction: column;
@@ -97,10 +74,6 @@ button {
     height: 100vh;
     color: rgba(255, 255, 255, 0.87);
 }
-
- .App.day {
-    background-color: var(--white);
- }
 
 .wrapper {
     max-width: 1200px;
@@ -134,19 +107,11 @@ header {
     width: 60%;
 }
 
-.day .heroText {
-    color: var(--black);
-}
-
 h1 {
     font-weight: 600;
     font-size: 2.75rem;
     line-height: 1.1;
     width: 100%;
-}
-
-.day h1 {
-    color: rgb(47, 155, 248);
 }
 
 .heroText h2 {
@@ -167,16 +132,6 @@ input {
     padding-left: 0.5rem;
 }
 
-.day input {
-    background-color: var(--lightgrey);
-    border: none;
-    color: var(--black);
-}
-
-.day input::placeholder {
-    color: var(--lightbluen);
-}
-
 .inputSearchBar button {
     all: revert;
     text-transform: uppercase;
@@ -189,10 +144,6 @@ input {
     cursor: pointer;
     transition: all 0.25s ease;
     letter-spacing: 0.07rem;
-}
-
-.day .inputSearchBar button {
-    background-color: var(--lightbluen);
 }
 
 .inputSearchBar button:hover {
@@ -208,14 +159,6 @@ input {
 
 .errorInput{
     border: 1px solid var(--red);
-}
-
-.day .error {
-    color: var(--purple);
-}
-
-.day .errorInput {
-    border: 1px solid var(--purple);
 }
 
 .AppContainer {
@@ -235,14 +178,6 @@ input {
     position: relative;
 }
 
-.day .AppContainer {
-    border-top: 5px solid var(--grey);
-    border-bottom: 5px solid var(--grey);
-    border-right: 8px solid var(--grey);
-    border-left: 8px solid var(--grey);
-    background-color: var(--lightblued);
-}
-
 .placeholderImage {
     width: 100%;
     height: 100%;
@@ -253,10 +188,6 @@ input {
     object-fit: contain;
     background: linear-gradient(45deg, var(--lightbluen), var(--darkbluen));
     border-radius: 65px;
-}
-
-.day .placeholderImage {
-    background: linear-gradient(45deg, var(--lightblued), var(--darkblued));
 }
 
 .city {
@@ -313,10 +244,6 @@ input {
     align-items: center;
 }
 
-.day .bottomHalfContainer {
-    background-color: var(--darkblued);
-}
-
 .tempIcon {
     width: 95%;
     position: absolute;
@@ -346,10 +273,6 @@ input {
     padding: 1rem 0;
 }
 
-.day .extraInfoContainer {
-    background: linear-gradient(var(--lightblued), var(--darkblued));
-}
-
 .extraInfoTitle {
     font-size: 0.75rem;
 }
@@ -370,16 +293,8 @@ input {
     bottom: 6%;
 }
 
-.day .footerContainer {
-    color: var(--black);
-}
-
 .footerContainer a {
     color: var(--lightbluen);
-}
-
-.day .footerContainer a {
-    color: var(--lightblued);
 }
 
 .footerContainer a:hover {
@@ -397,17 +312,8 @@ input {
     position: relative;
 }
 
-.day .modes {
-    background-color: var(--white);
-    border: 2px solid var(--lightblued)
-}
-
 .modes i {
     font-size: 1.25rem;
-}
-
-.day .modes i {
-    color: var(--lightblued);
 }
 
 .fa-sun {
@@ -425,10 +331,6 @@ input {
     transition: 0.4s ease-in;
 }
 
-.day .slider {
-    background-color: var(--lightblued);
-}
-
 select {
     height: 1.75rem;
     font-size: 0.75rem;
@@ -437,12 +339,6 @@ select {
     cursor: pointer;
     border: 0.25px solid rgb(88, 88, 88);
     padding: 0 5px;
-}
-
-.day select {
-    background-color: var(--white);
-    color: var(--lightblued);
-    border: 1.5px solid var(--lightblued);
 }
 
 .units {
@@ -471,16 +367,6 @@ select {
     border-radius: 2rem;
     transition: 0.4s ease-in;
     top: 3%;
-}
-
-.day .units {
-    background-color: var(--lightgrey);  
-    border: 2px solid var(--lightgrey);  
-    color: var(--lightblued);
-}
-
-.day .sliderTwo {
-    background-color: var(--lightblued);
 }
 
 .unitAndFavourite {
@@ -612,10 +498,6 @@ form button:hover {
     text-decoration: none;
 }
 
-.day .headerSignUpLink {
-    color: var(--black);
-}
-
 .signedInNav {
     display: flex;
     justify-content: center;
@@ -628,57 +510,6 @@ form button:hover {
 
 .signedInNav button {
     background-color: var(--lightbluen);
-}
-
-.day .signedInNav p {
-    color: var(--black);
-}
-
-.day .signedInNav button {
-    color: var(--white);
-    background-color: var(--lightblued);
-    transition: all 0.5s;
-} 
-
-.day .signedInNav button:hover {
-    background-color: var(--darkblued);
-}
-
-.day .formContainer {
-    background-color: var(--lightblued);
-}
-
-.day form input {
-    background-color: var(--white);
-}
-
-.day form input::placeholder {
-    color: var(--black);
-}
-
-.day .faInvisible {
-    border: none;
-    background-color: var(--white);
-    color: var(--black);
-}
-
-.day form button {
-    background-color: var(--darkblued);
-    color: var(--white);
-    transition: all 0.5s;
-}
-
-.day form button:hover {
-    background-color: var(--lightbluen);
-}
-
-.day .formContainer .formLink {
-    color: var(--white);
-    transition: all 0.25s;
-}
-
-.day .formContainer .formLink:hover {
-    color: var(--darkblued);
 }
 
 @keyframes shake {
@@ -700,45 +531,7 @@ form button:hover {
 }
 
 
-.day .loginError, .day .signupError, .day .passwordsMatchError {
-    color: var(--black);
-}
 
-@media (max-width: 1079px) {
-    .heroText {
-        padding-right: 2rem;
-    }
-
-}
-
-@media (max-width: 940px) {
-
-    .App {
-        height: auto;
-        text-align: center;
-    }
-
-    .mainContainer {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .inputSearchBar {
-        justify-content: center;
-    }
-
-    .heroText {
-        width: 100%;
-        padding-right: 0;
-    }
-
-    .footerContainer {
-        all: revert;
-        text-align: center;
-        font-size: 0.8rem;
-        padding: 5rem 0 1rem 0;
-    }
-}
 
 
 

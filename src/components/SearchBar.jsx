@@ -47,7 +47,7 @@ const SearchBar = ({ setCity, weather }) => {
         required
       />
       <button onClick={handleSearchClick} type="submit">
-        <i className="fa-solid fa-magnifying-glass"></i>
+        <i className="fa-solid fa-magnifying-glass faMagGlass"></i>
       </button>
       <p className="error">{errorMessage}</p>
     </div>
