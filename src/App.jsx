@@ -92,14 +92,11 @@ return (
 
 export default App
 
-//TO-ADD
-
-//.env file to store API keys for security
-
 //Stretch goals
 //Maybe use a remember me for forms, so user will constantly stay signed in. 
 //Maybe implement a forgot password for forms? 
 //404 routing 
 //Logged in, user can save a city that will always load, maybe include a 5 day forecast? 
 //Figure out UI for a logged in user.
+//improved mobile design
 
