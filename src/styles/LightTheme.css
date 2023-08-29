@@ -1,0 +1,178 @@
+.App.day {
+    background-color: var(--white);
+ }
+
+.day, .night {
+    transition: all 0.5s ease;
+}
+
+.day button {
+    background-color: var(--lightgrey);
+    color: var(--black);
+    border: none;
+    transition: all 0.5s;
+}
+
+.day .signUpBtn:hover {
+    background-color: var(--grey);
+}
+
+.day .logInBtn {
+    background-color: var(--lightblued);
+    color: var(--white);
+}
+
+.day .logInBtn:hover {
+    background-color: var(--darkblued);
+}
+
+.day .heroText {
+    color: var(--black);
+}
+
+.day h1 {
+    color: rgb(47, 155, 248);
+}
+
+.day input {
+    background-color: var(--lightgrey);
+    border: none;
+    color: var(--black);
+}
+
+.day input::placeholder {
+    color: var(--lightbluen);
+}
+
+.day .inputSearchBar button {
+    background-color: var(--lightbluen);
+}
+
+.day .faMagGlass {
+    color: var(--white);
+
+}
+
+.day .error {
+    color: var(--purple);
+}
+
+.day .errorInput {
+    border: 1px solid var(--purple);
+}
+
+.day .AppContainer {
+    border-top: 5px solid var(--grey);
+    border-bottom: 5px solid var(--grey);
+    border-right: 8px solid var(--grey);
+    border-left: 8px solid var(--grey);
+    background-color: var(--lightblued);
+}
+
+.day .placeholderImage {
+    background: linear-gradient(45deg, var(--lightblued), var(--darkblued));
+}
+
+.day .bottomHalfContainer {
+    background-color: var(--darkblued);
+}
+
+.day .extraInfoContainer {
+    background: linear-gradient(var(--lightblued), var(--darkblued));
+}
+
+.day .footerContainer {
+    color: var(--black);
+}
+
+.day .footerContainer a {
+    color: var(--lightblued);
+}
+
+.day .modes {
+    background-color: var(--white);
+    border: 2px solid var(--lightblued)
+}
+
+.day .modes i {
+    color: var(--lightblued);
+}
+
+.day .slider {
+    background-color: var(--lightblued);
+}
+
+.day select {
+    background-color: var(--white);
+    color: var(--lightblued);
+    border: 1.5px solid var(--lightblued);
+}
+
+.day .units {
+    background-color: var(--lightgrey);  
+    border: 2px solid var(--lightgrey);  
+    color: var(--lightblued);
+}
+
+.day .sliderTwo {
+    background-color: var(--lightblued);
+}
+
+.day .headerSignUpLink {
+    color: var(--black);
+}
+
+.day .signedInNav p {
+    color: var(--black);
+}
+
+.day .signedInNav button {
+    color: var(--white);
+    background-color: var(--lightblued);
+    transition: all 0.5s;
+} 
+
+.day .signedInNav button:hover {
+    background-color: var(--darkblued);
+}
+
+.day .formContainer {
+    background-color: var(--lightblued);
+}
+
+.day form input {
+    background-color: var(--white);
+}
+
+.day form input::placeholder {
+    color: var(--black);
+}
+
+.day .faInvisible {
+    border: none;
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.day form button {
+    background-color: var(--darkblued);
+    color: var(--white);
+    transition: all 0.5s;
+}
+
+.day form button:hover {
+    background-color: var(--lightbluen);
+}
+
+.day .formContainer .formLink {
+    color: var(--white);
+    transition: all 0.25s;
+}
+
+.day .formContainer .formLink:hover {
+    color: var(--darkblued);
+}
+
+.day .loginError, .day .signupError, .day .passwordsMatchError {
+    color: var(--black);
+}

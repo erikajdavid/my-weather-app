@@ -7,7 +7,9 @@ import LogIn from './components/LogIn';
 import HeroText from './components/HeroText';
 import WeatherData from './components/WeatherData';
 import Footer from './components/Footer';
-import './App.css'
+import './App.css';
+import './styles/LightTheme.css';
+import './styles/MediaQueries.css';
 
 function App() {
 
