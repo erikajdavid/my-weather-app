@@ -57,7 +57,7 @@ function App() {
       setUser(user);
     }); 
     return () => {
-      signOutUser(); // Cleanup the listener when the component unmounts
+      signOutUser(); 
     };
   }, [weather]);
 

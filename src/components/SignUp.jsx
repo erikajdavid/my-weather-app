@@ -12,8 +12,8 @@ const SignUp = () => {
     const [passwordVisible, setPassWordVisible] = useState(false);
     const [confirmPasswordVisible, setConfirmPassWordVisible] = useState(false);
     const [signupErrorMessage, setSignupErrorMessage] = useState('');
-    const [passwordsMatchError, setPasswordsMatchError] = useState(false); // New state for password match error
-    const [key, setKey] = useState(0); // Initialize key
+    const [passwordsMatchError, setPasswordsMatchError] = useState(false); 
+    const [key, setKey] = useState(0);
 
 
     const togglePasswordVisibility = () => {
@@ -31,13 +31,13 @@ const SignUp = () => {
 
         if (password.length < 6) {
             setSignupErrorMessage('Password should be at least 6 characters long.');
-            setPasswordsMatchError(false); // Clear passwords match error
+            setPasswordsMatchError(false); 
             setKey(prevKey => prevKey + 1); 
             return;
         }
 
         if (password !== confirmPassword) {
-            setSignupErrorMessage(''); // Clear previous error message
+            setSignupErrorMessage('');
             setPasswordsMatchError('true'); 
             setKey(prevKey => prevKey + 1); 
             return; 
@@ -48,7 +48,6 @@ const SignUp = () => {
             const userUID = userCredential.user.uid;
             const userEmail = userCredential.user.email;
 
-            // Save UID to the Firebase Realtime Database using ref
             const userRef = ref(database, `users/${userUID}`);
             set(userRef, { uid: userUID, email: userEmail });
 
@@ -59,7 +58,7 @@ const SignUp = () => {
         } catch (error) {
             if (error.code === 'auth/email-already-in-use') {
                 setSignupErrorMessage('An account with this email already exists.');
-                setPasswordsMatchError(false); // Clear passwords match error
+                setPasswordsMatchError(false);
                 setKey(prevKey => prevKey + 1); 
             } else {
                 console.log(error);

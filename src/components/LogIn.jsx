@@ -8,7 +8,7 @@ const LogIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loginErrorMessage, setLoginErrorMessage] = useState('');
-    const [key, setKey] = useState(0); // Initialize key
+    const [key, setKey] = useState(0); 
 
     const [passwordVisible, setPassWordVisible] = useState(false);
 
@@ -27,7 +27,7 @@ const LogIn = () => {
         }).catch((error) => {
             console.log(error);
             setLoginErrorMessage('Invalid email or password. Please try again.')
-            setKey(prevKey => prevKey + 1); // Increment key
+            setKey(prevKey => prevKey + 1);
         })
     }
 

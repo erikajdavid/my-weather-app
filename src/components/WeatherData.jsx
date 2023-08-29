@@ -11,7 +11,7 @@ import BottomHalfContainer from './BottomHalfContainer';
 const WeatherData = ({ weather, user }) => {
   let [weatherIconUrl, setWeatherIconUrl] = useState('');
   const [currentTimeInLocation, setCurrentTimeInLocation] = useState(null);
-  const [unit, setUnit] = useState('metric'); // Default is Celsius
+  const [unit, setUnit] = useState('metric'); 
   const currentHour = currentTimeInLocation?.getUTCHours();
   const isDaytime = currentHour >= 6 && currentHour < 20;
 
