@@ -704,25 +704,32 @@ form button:hover {
     color: var(--black);
 }
 
+@media (max-width: 1079px) {
+    .heroText {
+        padding-right: 2rem;
+    }
+
+}
 
 @media (max-width: 940px) {
 
     .App {
         height: auto;
+        text-align: center;
     }
 
     .mainContainer {
         flex-direction: column;
-        text-align: center;
         height: auto;
-    };
+    }
 
     .inputSearchBar {
-        margin: 0 auto;
+        justify-content: center;
     }
 
     .heroText {
         width: 100%;
+        padding-right: 0;
     }
 
     .footerContainer {
