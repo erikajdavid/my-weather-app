@@ -54,6 +54,12 @@
 
 }
 
+@media (max-width: 479px) {
+    .formContainer {
+        width: 430px;
+    }
+}
+
 @media (max-width: 440px) {
     .heroText {
         padding-right: 0;
@@ -108,5 +114,16 @@
 
     .signUpBtn {
         display: none;
+    }
+
+    .formContainer {
+        max-width: 375px;
+    }
+}
+
+@media (max-width: 380px) {
+    .formContainer {
+        width: 300px;
+        padding: 2rem 1rem;
     }
 }
