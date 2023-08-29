@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getDatabase, ref, onValue, push } from 'firebase/database';
+import { getDatabase, ref, onValue, push, set } from 'firebase/database';
 import { useNavigate } from 'react-router-dom';
 
 const Favourited = ({ weather, user }) => {
@@ -11,16 +11,23 @@ const Favourited = ({ weather, user }) => {
         const database = getDatabase();
         const userUID = user ? user.uid : null;
         if (userUID) {
-            const childRef = ref(database, `users/${userUID}`);
-            onValue(childRef, (response) => {
-                const data = response.val();
+            const childRef = ref(database, `users/${userUID}/favoriteCity`);
+            onValue(childRef, (snapshot) => {
+                const data = snapshot.val();
                 if (data) {
-                    const updatedFbData = Object.values(data);
-                    setFbData(updatedFbData);
+                    setFbData(Object.values(data));
                 }
             });
         }
     }, [user]);
+
+    useEffect(() => {
+        if (user && fbData.includes(weather.name)) {
+            setIsFavorited(true);
+        } else {
+            setIsFavorited(false);
+        }
+    }, [user, fbData, weather]);
 
     const handleFavoriteClick = () => {
         if (!user) {
@@ -28,25 +35,24 @@ const Favourited = ({ weather, user }) => {
             return;
         }
 
-        setIsFavorited(!isFavorited);
+        const cityName = weather.name;
+        const database = getDatabase();
+        const childRef = ref(database, `users/${user.uid}/favoriteCity`);
 
-        if (user) {
-            const cityName = weather.name;
-            const database = getDatabase();
-            const childRef = ref(database, `users/${user.uid}/favoriteCity`);
-
-            if (isFavorited) {
-                const updatedFbData = fbData.filter(item => item !== cityName);
-                setFbData(updatedFbData);
-            } else {
-                push(childRef, cityName);
-            }
+        if (isFavorited) {
+            const updatedFbData = fbData.filter(item => item !== cityName);
+            setFbData(updatedFbData);
+            set(childRef, updatedFbData);
+        } else {
+            push(childRef, cityName);
         }
+
+        setIsFavorited(!isFavorited);
     };
 
     return (
         <i
-            className={` ${isFavorited ? 'fa-solid fa-heart faHeartSolid' : 'fa-regular fa-heart faHeartOutline'}`}
+            className={`fa ${isFavorited ? 'fa-solid faHeartSolid' : 'fa-regular faHeartOutline'} fa-heart`}
             onClick={handleFavoriteClick}
         ></i>
     );
