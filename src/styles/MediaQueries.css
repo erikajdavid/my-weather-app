@@ -47,6 +47,11 @@
     .heroText h2 {
         font-size: 1.25rem;
     }
+
+    .heroText {
+        padding-bottom: 3rem;
+    }
+
 }
 
 @media (max-width: 440px) {
@@ -101,4 +106,7 @@
         margin: 0 0.5rem;
     }
 
+    .signUpBtn {
+        display: none;
+    }
 }
