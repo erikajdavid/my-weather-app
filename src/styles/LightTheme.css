@@ -41,7 +41,7 @@
 }
 
 .day input::placeholder {
-    color: var(--lightbluen);
+    color: var(--darkgrey);
 }
 
 .day .inputSearchBar button {
@@ -180,4 +180,8 @@
 .day .spinner {
     border: 10px solid var(--darkblued);
     border-top: 10px solid var(--white);
-  }
+}
+
+.day .returnHomeLink {
+    color: var(--black);
+}

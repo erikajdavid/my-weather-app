@@ -15,4 +15,9 @@
     color: white; 
     font-size: 0.8rem;
     text-decoration: none;
+    transition: all 0.25s;
+}
+
+.returnHomeLink404:hover {
+    text-decoration: underline;
 }
