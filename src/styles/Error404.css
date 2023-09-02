@@ -1,0 +1,23 @@
+.error404Container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.returnHome404 {
+    padding-top: 2rem;
+}
+.returnHomeLink404 {
+    margin-top: 2rem;
+    color: white; 
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: all 0.25s;
+}
+
+.returnHomeLink404:hover {
+    text-decoration: underline;
+}
