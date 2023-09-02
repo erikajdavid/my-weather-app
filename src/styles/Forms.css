@@ -6,8 +6,29 @@
     align-items: center;
 }
 
+.returnHome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    font-size: 0.8rem;
+    padding-top: 2rem;
+}
+
+.returnHomeLink {
+    color: var(--white);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+.returnHomeLink:hover {
+    text-decoration: underline;
+}
+
 .formContainer {
     width: 450px;
+
     background-color: #1a1a1a;
     padding: 3rem 2rem;
     border-radius: 6px;
@@ -39,6 +60,11 @@ form input {
     border-radius: 6px;
     font-size: 1rem;
     letter-spacing: 0.02rem;
+    color: white;
+}
+
+form input::placeholder {
+    color: var(--grey);
 }
 
 form .passwordContainer input {

@@ -55,14 +55,14 @@ button {
     transition: border 0.5s;
   }
 
-  button:hover {
-    border: 2px solid var(--white);
-  }
+button:hover {
+border: 2px solid var(--white);
+}
 
-  .logInBtn {
-    background-color: var(--lightbluen);
-    border: 2px solid var(--lightbluen);
-  }
+.logInBtn {
+background-color: var(--lightbluen);
+border: 2px solid var(--lightbluen);
+}
 
 .App {
     display: flex;
@@ -148,6 +148,10 @@ input {
 
 .inputSearchBar button:hover {
     background-color: rgb(76, 125, 249);
+}
+
+.faMagGlass {
+    color: var(--white);
 }
 
 .error {
