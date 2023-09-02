@@ -12,6 +12,8 @@ import Error404 from './components/Error404';
 import './App.css';
 import './styles/ApiLoadingStates.css'
 import './styles/LightTheme.css';
+import './styles/ModeToggle.css'
+import './styles/TempUnitToggle.css'
 import './styles/Forms.css';
 import './styles/MediaQueries.css';
 import './styles/Error404.css';
@@ -50,7 +52,7 @@ function App() {
       .then(res => res.json())
       .then(results => {
         setTimeout(() => {
-          setIsLoading(false); // Set loading to false after 3 seconds
+          setIsLoading(false); 
           if (results.cod === '404') {
             setWeather({ cod: '404', message: results.message });
           } else {
@@ -109,12 +111,3 @@ return (
 }
 
 export default App
-
-//Stretch goals
-//Maybe use a remember me for forms, so user will constantly stay signed in. 
-//Maybe implement a forgot password for forms? 
-//404 routing 
-//Logged in, user can save a city that will always load, maybe include a 5 day forecast? 
-//Figure out UI for a logged in user.
-//improved mobile design
-

@@ -6,6 +6,8 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
+/* SETUP REUSEABLE STYLES */
+
 :root {
     --black: rgb(14, 14, 14);
     --white: rgb(251, 251, 253);
@@ -17,7 +19,6 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
     --darkblued: rgb(0, 67, 173);
     --lightgrey: rgb(229, 229, 229);
     --grey: rgb(210, 210, 210);
-    --darkgrey: rgb(101, 101, 101);
     line-height: 1.5;
     font-weight: 400;
   
@@ -43,6 +44,17 @@ body, p, h1, h2, h3 {
     margin: 0;
 }
 
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    color: rgba(255, 255, 255, 0.87);
+}
+
 button {
     border-radius: 2rem;
     padding: 0.9rem 1.5rem;
@@ -60,22 +72,6 @@ button:hover {
     border: 2px solid var(--white);
 }
 
-.logInBtn {
-    background-color: var(--lightbluen);
-    border: 2px solid var(--lightbluen);
-}
-
-.App {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    color: rgba(255, 255, 255, 0.87);
-}
-
 .wrapper {
     max-width: 1200px;
     width: 90%;
@@ -83,6 +79,9 @@ button:hover {
     position: relative;
     height: 100%;
 }
+
+
+/* HEADER */
 
 header {
     width: 100%;
@@ -92,12 +91,21 @@ header {
     height: 8vh;
 }
 
+.logInBtn {
+    background-color: var(--lightbluen);
+    border: 2px solid var(--lightbluen);
+}
+
+/* MAIN */
+
 .mainContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 5%;
 }
+
+/* HERO TEXT */
 
 .heroText {
     display: flex;
@@ -121,6 +129,8 @@ h1 {
     font-size: 1.5rem;
     width: 100%;
 }
+
+/* SEARCH BAR */
 
 .inputSearchBar {
     display: flex;
@@ -165,6 +175,8 @@ input {
     border: 1px solid var(--red);
 }
 
+/* APP CONTAINER */
+
 .AppContainer {
     background-color: var(--lightbluen);
     width: 400px;
@@ -192,6 +204,19 @@ input {
     object-fit: contain;
     background: linear-gradient(45deg, var(--lightbluen), var(--darkbluen));
     border-radius: 65px;
+}
+
+.faHeartOutline {
+    z-index: 20;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--white);
+}
+
+.faHeartSolid {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: rgb(237, 142, 158);
 }
 
 .city {
@@ -290,6 +315,8 @@ input {
     padding: 0.25rem 0;
 }
 
+/* FOOTER */
+
 .footerContainer {
     font-size: 0.8rem;
     width: 100%; 
@@ -303,36 +330,6 @@ input {
     color: rgb(132, 132, 255);
 }
 
-.modes {
-    width: auto;
-    border-radius: 2rem;
-    display: flex;
-    background-color: var(--lightbluen);    
-    border: 2px solid var(--lightbluen);
-    padding: 0.7rem 0.9rem;
-    cursor: pointer;
-    position: relative;
-}
-
-.modes i {
-    font-size: 1.25rem;
-}
-
-.fa-sun {
-    margin-right: 1rem;
-}
-
-.slider {
-    position: absolute;
-    top: 12%;
-    left: 0;
-    background-color: var(--darkbluen);
-    width: 2rem;
-    height: 2rem;
-    border-radius: 2rem;
-    transition: 0.4s ease-in;
-}
-
 select {
     height: 1.75rem;
     font-size: 0.75rem;
@@ -341,54 +338,6 @@ select {
     cursor: pointer;
     border: 0.25px solid rgb(88, 88, 88);
     padding: 0 5px;
-}
-
-.units {
-    display: flex;
-    border-radius: 2rem;
-    color: var(--lightbluen);
-    background-color: var(--white);    
-    border: 2px solid var(--white);
-    cursor: pointer;
-    padding: 0.15rem 0.2rem;
-    z-index: 20;
-    position: relative;
-}
-
-.units p {
-    font-weight: 400;
-    font-size: 0.8rem;
-    padding: 0 0.35rem;
-}
-
-.sliderTwo {
-    position: absolute;
-    background-color: var(--darkbluen);
-    width: 1.3rem;
-    height: 1.3rem;
-    border-radius: 2rem;
-    transition: 0.4s ease-in;
-    top: 3%;
-}
-
-.unitAndFavourite {
-    padding: 1rem 2.5rem 0 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.faHeartOutline {
-    z-index: 20;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--white);
-}
-
-.faHeartSolid {
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: rgb(237, 142, 158);
 }
 
 
