@@ -28,6 +28,7 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -291,8 +292,6 @@ input {
 .footerContainer {
     font-size: 0.8rem;
     width: 100%; 
-    position: absolute;
-    bottom: 6%;
 }
 
 .footerContainer a {
