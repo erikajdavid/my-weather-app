@@ -41,7 +41,6 @@ body, p, h1, h2, h3 {
     margin: 0;
 }
 
-
 button {
     border-radius: 2rem;
     padding: 0.9rem 1.5rem;
@@ -56,12 +55,12 @@ button {
   }
 
 button:hover {
-border: 2px solid var(--white);
+    border: 2px solid var(--white);
 }
 
 .logInBtn {
-background-color: var(--lightbluen);
-border: 2px solid var(--lightbluen);
+    background-color: var(--lightbluen);
+    border: 2px solid var(--lightbluen);
 }
 
 .App {
