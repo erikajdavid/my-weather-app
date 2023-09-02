@@ -8,11 +8,14 @@ import HeroText from './components/HeroText';
 import ApiLoadingStates from './components/ApiLoadingStates';
 import WeatherData from './components/WeatherData';
 import Footer from './components/Footer';
+import Error404 from './components/Error404';
 import './App.css';
 import './styles/ApiLoadingStates.css'
 import './styles/LightTheme.css';
 import './styles/Forms.css';
 import './styles/MediaQueries.css';
+import './styles/Error404.css';
+
 
 function App() {
 
@@ -97,6 +100,7 @@ return (
           <Route path="/signup" element={<SignUp />} />
           {/* Route for the login page */}
           <Route path="/login" element={<LogIn />} />
+          <Route path="*" element={<Error404/>} />
         </Routes>
       </div>
     </div>

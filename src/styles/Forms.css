@@ -6,16 +6,9 @@
     align-items: center;
 }
 
-.returnHome {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 450px;
+.returnHomeLink {
     font-size: 0.8rem;
     padding-top: 2rem;
-}
-
-.returnHomeLink {
     color: var(--white);
     text-decoration: none;
     cursor: pointer;
