@@ -156,9 +156,8 @@ input {
 
 .error {
     color: var(--red);
-    position: absolute;
-    top: 65%;
     font-size: 0.85rem;
+    padding-top: 0.5rem;
 }
 
 .errorInput{

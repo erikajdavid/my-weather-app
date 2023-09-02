@@ -36,21 +36,24 @@ const SearchBar = ({ setCity, weather }) => {
   const errorInputClass = errorMessage ? 'errorInput' : '';
 
   return (
-    <div className="inputSearchBar">
-      <input 
-        className={errorInputClass}
-        type="text"
-        placeholder="Enter your city"
-        value={inputCity}
-        onChange={handleInputChange} 
-        onKeyDown={handleKeyPress} 
-        required
-      />
-      <button onClick={handleSearchClick} type="submit">
-        <i className="fa-solid fa-magnifying-glass faMagGlass"></i>
-      </button>
-      <p className="error">{errorMessage}</p>
+    <>
+      <div className="inputSearchBar">
+        <input 
+          className={errorInputClass}
+          type="text"
+          placeholder="Enter your city"
+          value={inputCity}
+          onChange={handleInputChange} 
+          onKeyDown={handleKeyPress} 
+          required
+        />
+        <button onClick={handleSearchClick} type="submit">
+          <i className="fa-solid fa-magnifying-glass faMagGlass"></i>
+        </button>
     </div>
+    <p className="error">{errorMessage}</p>
+    </>
+
   );
 };
 
