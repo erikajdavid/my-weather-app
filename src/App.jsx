@@ -5,9 +5,11 @@ import Header from './components/Header'
 import SignUp from './components/SignUp';
 import LogIn from './components/LogIn';
 import HeroText from './components/HeroText';
+import ApiLoadingStates from './components/ApiLoadingStates';
 import WeatherData from './components/WeatherData';
 import Footer from './components/Footer';
 import './App.css';
+import './styles/ApiLoadingStates.css'
 import './styles/LightTheme.css';
 import './styles/Forms.css';
 import './styles/MediaQueries.css';
@@ -82,10 +84,7 @@ return (
                 <HeroText setCity={setCity} searchCity={searchCity} weather={weather} />
                 <div className="AppContainer">
                   {isLoading ? (
-                    <div className="spinnerContainer">
-                      <div className='spinner'></div>
-                      <p className="loadingText">loading...</p>
-                    </div>
+                    <ApiLoadingStates />
                   ) : (
                     <WeatherData weather={weather} unit={unit} setUnit={setUnit} user={user} />
                   )}
