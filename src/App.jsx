@@ -19,6 +19,7 @@ function App() {
   const [mode, setMode] = useState('night'); 
   const [unit, setUnit] = useState('metric'); 
   const [user, setUser] = useState(null)
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (city) {
@@ -27,6 +28,9 @@ function App() {
   }, [city]);
 
   const searchCity = () => {
+
+    setIsLoading(true);
+
     const apiKey = import.meta.env.VITE_API_KEY;
     const metric = "metric";
     const newUrl = new URL("https://api.openweathermap.org/data/2.5/weather")
@@ -40,14 +44,17 @@ function App() {
     fetch(newUrl)
       .then(res => res.json())
       .then(results => {
-        if (results.cod === '404') {
-          setWeather({ cod: '404', message: results.message });
-        } else {
-          setWeather(results);
-        }
-        console.log(results);
+        setTimeout(() => {
+          setIsLoading(false); // Set loading to false after 3 seconds
+          if (results.cod === '404') {
+            setWeather({ cod: '404', message: results.message });
+          } else {
+            setWeather(results);
+          }
+        }, 900);
     })
       .catch(error => {
+        setIsLoading(false); 
         console.error('Error fetching weather data:', error);
         setWeather({ cod: '500', message: 'Server error. Please try again later.' });
       });
@@ -74,7 +81,14 @@ return (
               <div className="mainContainer">
                 <HeroText setCity={setCity} searchCity={searchCity} weather={weather} />
                 <div className="AppContainer">
-                  <WeatherData weather={weather} unit={unit} setUnit={setUnit} user={user}  />
+                  {isLoading ? (
+                    <div className="spinnerContainer">
+                      <div className='spinner'></div>
+                      <p className="loadingText">loading...</p>
+                    </div>
+                  ) : (
+                    <WeatherData weather={weather} unit={unit} setUnit={setUnit} user={user} />
+                  )}
                 </div>
               </div>
               <Footer />

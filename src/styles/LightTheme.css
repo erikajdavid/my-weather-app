@@ -176,3 +176,8 @@
 .day .loginError, .day .signupError, .day .passwordsMatchError {
     color: var(--black);
 }
+
+.day .spinner {
+    border: 10px solid var(--darkblued);
+    border-top: 10px solid var(--white);
+  }
