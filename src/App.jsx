@@ -102,6 +102,7 @@ return (
           <Route path="/signup" element={<SignUp />} />
           {/* Route for the login page */}
           <Route path="/login" element={<LogIn />} />
+           {/* Route for the error 404 page */}
           <Route path="*" element={<Error404/>} />
         </Routes>
       </div>
