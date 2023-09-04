@@ -38,6 +38,7 @@
     background-color: var(--lightgrey);
     border: none;
     color: var(--black);
+    border: 2px solid var(--lightgrey);
 }
 
 .day input::placeholder {
