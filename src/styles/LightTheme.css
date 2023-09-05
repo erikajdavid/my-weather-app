@@ -153,6 +153,8 @@
     border: none;
     background-color: var(--white);
     color: var(--black);
+    border: 2px solid var(--white);
+
 }
 
 .day form button {
